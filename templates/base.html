@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}EUKI India Pvt. Ltd. — Digital Growth Starts Here{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}EUKI India Pvt. Ltd. is your end-to-end digital growth partner — e-commerce management, digital marketing, web development & more.{% endblock %}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── TOPBAR ─────────────────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span>📍 Indore, Madhya Pradesh, India</span>
+      <a href="mailto:hello@eukiindia.com">✉ hello@eukiindia.com</a>
+      <a href="tel:+917890123456">📞 +91 789 012 3456</a>
+    </div>
+    <div class="topbar-right">
+      <a href="https://facebook.com" target="_blank" class="social-link">f</a>
+      <a href="https://instagram.com" target="_blank" class="social-link">in</a>
+      <a href="https://linkedin.com" target="_blank" class="social-link">li</a>
+      <a href="https://twitter.com" target="_blank" class="social-link">tw</a>
+      <a href="https://youtube.com" target="_blank" class="social-link">yt</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ────────────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="{{ url_for('home') }}" class="navbar-brand">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="EUKI India Pvt. Ltd." />
+    </a>
+
+    <ul class="nav-menu" id="navMenu">
+
+      <li class="nav-item">
+        <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('services') }}" class="nav-link" data-toggle="services">
+          Services <span class="chevron">▾</span>
+        </a>
+        <div class="mega-dropdown">
+          <div class="mega-col">
+            <h6>E-Commerce</h6>
+            <a href="{{ url_for('ecommerce_marketing') }}">E-Commerce Marketing</a>
+            <a href="{{ url_for('amazon') }}">Amazon Management</a>
+            <a href="{{ url_for('flipkart') }}">Flipkart Management</a>
+            <a href="{{ url_for('meesho') }}">Meesho Selling</a>
+          </div>
+          <div class="mega-col">
+            <h6>Digital</h6>
+            <a href="{{ url_for('digital_marketing') }}">Digital Marketing</a>
+            <a href="{{ url_for('seo') }}">SEO Services</a>
+            <a href="{{ url_for('web_development') }}">Web Development</a>
+          </div>
+          <div class="mega-col">
+            <h6>Creative</h6>
+            <a href="{{ url_for('graphic_designing') }}">Graphic Design & Videos</a>
+            <a href="{{ url_for('product_photography') }}">Product Photography</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('ecommerce') }}" class="nav-link" data-toggle="ecommerce">
+          E-Commerce <span class="chevron">▾</span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-item"><a href="{{ url_for('amazon') }}">🛒 Amazon India & USA</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('flipkart') }}">🔵 Flipkart</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('meesho') }}">🩷 Meesho</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('nykaa') }}">💄 Nykaa</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('jiomart') }}">🛍 JioMart</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('etsy') }}">🎨 Etsy</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('walmart') }}">🏪 Walmart</a></div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('partners') }}" class="nav-link" data-toggle="partners">
+          Partners <span class="chevron">▾</span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-item"><a href="{{ url_for('partner_amazon') }}">Amazon Partner</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('partner_flipkart') }}">Flipkart Partner</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('partner_shopify') }}">Shopify Partner</a></div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('career') }}" class="nav-link">Career</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('events') }}" class="nav-link">Events</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('business_enquiry') }}" class="nav-link nav-cta">Get a Quote</a>
+      </li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── FLASH MESSAGES ────────────────────────────────────────────────── -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div style="position:fixed;top:80px;right:20px;z-index:2000;max-width:380px;">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- ── PAGE CONTENT ─────────────────────────────────────────────────── -->
+{% block content %}{% endblock %}
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="EUKI India" />
+        <p>Your dedicated partner for digital acceleration — from marketplace growth to full-stack web development and beyond. We engineer results that matter.</p>
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank">f</a>
+          <a href="https://instagram.com" target="_blank">in</a>
+          <a href="https://linkedin.com" target="_blank">li</a>
+          <a href="https://twitter.com" target="_blank">tw</a>
+          <a href="https://youtube.com" target="_blank">yt</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="{{ url_for('ecommerce_marketing') }}">E-Commerce Marketing</a></li>
+          <li><a href="{{ url_for('digital_marketing') }}">Digital Marketing</a></li>
+          <li><a href="{{ url_for('web_development') }}">Web Development</a></li>
+          <li><a href="{{ url_for('graphic_designing') }}">Graphic Design</a></li>
+          <li><a href="{{ url_for('product_photography') }}">Product Photography</a></li>
+          <li><a href="{{ url_for('seo') }}">SEO Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Platforms</h5>
+        <ul>
+          <li><a href="{{ url_for('amazon') }}">Amazon</a></li>
+          <li><a href="{{ url_for('flipkart') }}">Flipkart</a></li>
+          <li><a href="{{ url_for('meesho') }}">Meesho</a></li>
+          <li><a href="{{ url_for('nykaa') }}">Nykaa</a></li>
+          <li><a href="{{ url_for('jiomart') }}">JioMart</a></li>
+          <li><a href="{{ url_for('etsy') }}">Etsy</a></li>
+          <li><a href="{{ url_for('walmart') }}">Walmart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('career') }}">Career</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          <li><a href="{{ url_for('business_enquiry') }}">Business Enquiry</a></li>
+          <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+          <li><a href="{{ url_for('terms_conditions') }}">Terms & Conditions</a></li>
+          <li><a href="{{ url_for('refund_policy') }}">Refund Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span>© 2024 EUKI India Pvt. Ltd. All rights reserved.</span>
+      <span>
+        <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="{{ url_for('terms_conditions') }}">Terms</a> &nbsp;·&nbsp;
+        <a href="{{ url_for('refund_policy') }}">Refund Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── BACK TO TOP ──────────────────────────────────────────────────── -->
+<div class="back-to-top" title="Back to top">↑</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

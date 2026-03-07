@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Our Partners — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Partners</span></div>
+    <h1>Official Marketplace & Platform Partners</h1>
+    <p>EUKI India holds official partner status with leading marketplaces and platforms — giving our clients priority support, exclusive tools, and early access to new features.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for p in [
+        ('🛒','Amazon Service Provider Network','We are a registered Amazon SPN partner — vetted by Amazon for quality and compliance in seller services.','partner_amazon'),
+        ('🔵','Flipkart Preferred Seller Service Partner','Our Flipkart partnership gives us priority access to seller support, training resources, and beta features.','partner_flipkart'),
+        ('🛍','Shopify Partner Program','As a certified Shopify Partner, we build and manage high-performance e-commerce stores for brands going D2C.','partner_shopify'),
+      ] %}
+      <div class="card" style="padding:36px;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:20px;">{{ p[0] }}</div>
+        <h3 style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:14px;">{{ p[1] }}</h3>
+        <p style="color:var(--gray-600);font-size:.9rem;line-height:1.7;margin-bottom:20px;">{{ p[2] }}</p>
+        <a href="{{ url_for(p[3]) }}" class="btn btn-blue btn-sm">Learn More</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Partner Benefits</div>
+      <h2 class="section-title">What Our Partner Status <span>Means for You</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for b in [
+        ('🏆','Priority Seller Support','Skip standard support queues — our partner status gives your account priority case resolution.'),
+        ('🔧','Early Access to Features','Test and implement new platform features before they roll out to the general seller community.'),
+        ('📚','Dedicated Training & Insights','Access to exclusive platform training, policy updates, and marketplace trend reports.'),
+      ] %}
+      <div class="feature-item" style="background:var(--white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);">
+        <div class="feature-icon">{{ b[0] }}</div>
+        <div class="feature-content">
+          <h4>{{ b[1] }}</h4>
+          <p>{{ b[2] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

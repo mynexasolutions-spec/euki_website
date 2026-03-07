@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Meesho Selling Services — EUKI India{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/ecommerce">E-Commerce</a><span class="breadcrumb-sep">›</span><span>Meesho</span></div>
+    <h1>🩷 Meesho Management</h1>
+    <p>Tap into India's fastest-growing social commerce platform with 140M+ active users.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Supplier Onboarding','Complete Meesho supplier registration, category setup, and initial catalog upload.'),
+        ('📦','Catalog Creation','Compelling product titles, descriptions, and image uploads optimized for Meesho search.'),
+        ('💰','Pricing Strategy','Dynamic pricing calibrated to Meesho\'s price-sensitive buyer base while maintaining margins.'),
+        ('📢','Meesho Ads','Boost campaigns and product promotions to increase listing visibility and order volume.'),
+        ('🔄','Returns Management','Efficient return handling and quality score maintenance to avoid penalties.'),
+        ('📊','Performance Analytics','Weekly tracking of orders, returns, and ratings to keep your account in top health.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:48px;" class="cta-banner">
+      <h2>Start Selling on Meesho Today</h2>
+      <p>Get your catalog live on Meesho in as little as 3 business days with our rapid onboarding service.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Launch on Meesho</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

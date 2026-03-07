@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Privacy Policy — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Privacy Policy</span></div>
+    <h1>Privacy Policy</h1>
+    <p>Last Updated: January 1, 2025</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    <div class="card" style="padding:48px;">
+      {% for section in [
+        ('1. Introduction', 'EUKI India Pvt. Ltd. ("EUKI", "we", "us", or "our") respects the privacy of every individual who visits our website or engages with our services. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you access eukiindia.com or use our digital services. By using our website, you consent to the practices outlined in this policy.'),
+        ('2. Information We Collect', 'We collect information you provide directly — such as your name, email address, phone number, company name, and project details when you fill out enquiry forms, contact forms, or register for events. We also collect usage data automatically, including IP addresses, browser type, referring URLs, pages visited, and time on site, using cookies and analytics tools.'),
+        ('3. How We Use Your Information', 'We use your information to respond to enquiries and service requests, deliver contracted services, send service-related communications and updates, improve our website and service offerings, send marketing communications where you have opted in, and meet legal or regulatory obligations.'),
+        ('4. Data Sharing & Disclosure', 'EUKI India does not sell, rent, or trade your personal information. We may share data with trusted third-party service providers (such as email tools, analytics platforms, or payment processors) who assist in delivering our services — subject to strict confidentiality agreements. We may also disclose information when legally required to do so.'),
+        ('5. Data Retention', 'We retain personal data for as long as is necessary to fulfill the purposes outlined in this policy, or as required by applicable law. Client project data is retained for a minimum of 3 years post-engagement unless deletion is requested.'),
+        ('6. Your Rights', 'You have the right to access, correct, or delete your personal data held by us. You may also withdraw consent for marketing communications at any time by emailing privacy@eukiindia.com or clicking "Unsubscribe" in any email we send. We will respond to all requests within 30 days.'),
+        ('7. Cookies Policy', 'Our website uses cookies to enhance your browsing experience, remember preferences, and gather analytics data. You can control cookie settings through your browser. Disabling cookies may affect certain features of the site.'),
+        ('8. Security', 'We implement technical and organizational measures to protect your data against unauthorized access, loss, or misuse. However, no internet transmission is 100% secure, and we cannot guarantee absolute security.'),
+        ('9. Contact', 'For privacy-related queries, please contact our Data Protection Officer at: privacy@eukiindia.com or write to us at EUKI India Pvt. Ltd., 4th Floor, Digital Tower, AB Road, Indore — 452001.'),
+      ] %}
+      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin:28px 0 10px;">{{ section[0] }}</h3>
+      <p style="color:var(--gray-600);line-height:1.9;font-size:.92rem;">{{ section[1] }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

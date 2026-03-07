@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}About Us — EUKI India Pvt. Ltd.{% endblock %}
+{% block meta_desc %}Learn about EUKI India — our story, mission, values, and the expert team driving digital growth for 500+ brands across India and beyond.{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>About Us</span></div>
+    <h1>Driving India's <br/>Digital Commerce Revolution</h1>
+    <p>Built on expertise, powered by passion — EUKI India has been the growth engine behind hundreds of thriving brands since 2018.</p>
+  </div>
+</div>
+
+<!-- Our Story -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title" style="text-align:left;">From a Small Office in <span>Indore</span> to a National Force</h2>
+        <div class="divider divider-left" style="margin-bottom:22px;"></div>
+        <p style="color:var(--gray-600);line-height:2;margin-bottom:18px;">
+          EUKI India was founded with one question in mind: why do so many quality Indian brands struggle to scale online while inferior products dominate the shelves? The answer, we discovered, was execution — the right strategy, deployed consistently, at the right time.
+        </p>
+        <p style="color:var(--gray-600);line-height:2;margin-bottom:18px;">
+          Starting with just a handful of Amazon sellers in Indore, we built our methodology through trial, data, and relentless iteration. Today, we manage 500+ brands across 7 platforms, with a team of 80+ specialists covering every facet of digital commerce.
+        </p>
+        <p style="color:var(--gray-600);line-height:2;">
+          Our tagline isn't just a slogan — digital growth truly does start here.
+        </p>
+      </div>
+      <div style="background:var(--off-white);border-radius:var(--radius-xl);padding:40px;">
+        <div class="grid-2" style="gap:20px;">
+          {% for s in [('2018','Founded','Year of establishment'),('500+','Brands','Served across India'),('80+','Specialists','In-house experts'),('7','Platforms','Marketplace expertise')] %}
+          <div style="text-align:center;background:var(--white);padding:24px 16px;border-radius:var(--radius-md);box-shadow:var(--shadow-card);">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">{{ s[0] }}</div>
+            <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin:4px 0 2px;">{{ s[1] }}</div>
+            <div style="font-size:.8rem;color:var(--gray-400);">{{ s[2] }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Purpose</div>
+      <h2 class="section-title">Mission, Vision & <span>Values</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('🎯','Our Mission','To democratize digital commerce by giving every Indian brand — regardless of size — the tools, expertise, and execution power to compete and win on global platforms.'),
+        ('🔭','Our Vision','A future where every Indian brand has a thriving digital presence, and EUKI is the invisible engine powering that success — one marketplace at a time.'),
+        ('💎','Our Values','Integrity in every interaction. Data before opinion. Client success as our success. Continuous learning. And a culture that celebrates results over effort.'),
+      ] %}
+      <div class="card" style="padding:36px;text-align:center;">
+        <div style="font-size:2.8rem;margin-bottom:16px;">{{ item[0] }}</div>
+        <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:14px;">{{ item[1] }}</h3>
+        <p style="color:var(--gray-600);font-size:.9rem;line-height:1.8;">{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Meet the Team</div>
+      <h2 class="section-title">The Experts Behind <span>Your Growth</span></h2>
+      <p class="section-subtitle">A cross-disciplinary team of marketplace strategists, creatives, developers, and analysts — united by a shared obsession with client success.</p>
+    </div>
+    <div class="grid-4">
+      {% for member in [
+        ('Karan Mehta','CEO & Co-Founder','Former Amazon category manager with 10+ years in e-commerce strategy.','KM','blue'),
+        ('Sneha Joshi','Head of Marketplace Ops','Leads a 30-person team managing 200+ seller accounts daily.','SJ','orange'),
+        ('Vikram Rao','Digital Marketing Lead','Performance marketing specialist — Google, Meta, and marketplace ads.','VR','blue'),
+        ('Pooja Agarwal','Creative Director','Brand identity, video production, and marketplace visual content.','PA','orange'),
+      ] %}
+      <div class="card" style="padding:28px;text-align:center;">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--grad-{% if member[4]=='blue' %}blue{% else %}orange{% endif %});display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.5rem;font-weight:800;color:var(--white);margin:0 auto 16px;">{{ member[5] if member[5] is defined else member[3] }}</div>
+        <h4 style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:4px;">{{ member[0] }}</h4>
+        <p style="font-size:.82rem;color:var(--blue-mid);font-weight:600;font-family:var(--font-head);margin-bottom:10px;">{{ member[1] }}</p>
+        <p style="font-size:.83rem;color:var(--gray-600);line-height:1.6;">{{ member[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Want to Build Something Great Together?</h2>
+      <p>Whether you're a brand owner, an investor, or a future EUKI team member — let's connect.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="{{ url_for('career') }}" class="btn btn-secondary btn-lg">Join Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Digital Marketing Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Digital Marketing</span></div>
+    <h1>📣 Digital Marketing</h1>
+    <p>Multi-channel campaigns that build brand equity, drive traffic, and generate leads that convert into revenue.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for svc in [
+        ('🎯','Performance Marketing','Google Ads, Meta Ads, and programmatic campaigns fine-tuned for maximum ROAS with weekly optimization.'),
+        ('📱','Social Media Marketing','Content calendars, community management, and paid campaigns across Instagram, Facebook, LinkedIn & YouTube.'),
+        ('✉️','Email & WhatsApp Marketing','Automated drip campaigns, re-engagement sequences, and broadcast strategies that nurture leads to purchase.'),
+        ('🤳','Influencer Marketing','Micro and macro influencer campaigns aligned with your category — tracked for genuine ROI, not just reach.'),
+        ('📊','Analytics & Reporting','Custom dashboards tracking every KPI — from first click to final conversion, with monthly strategy reviews.'),
+        ('🔄','Retargeting Campaigns','Bring back lost visitors with precision retargeting on Google Display, YouTube, and Meta platforms.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ svc[0] }}</div>
+        <h3>{{ svc[1] }}</h3>
+        <p>{{ svc[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Turn Your Ad Budget into Predictable Revenue</h2>
+      <p>Our performance marketing team will audit your current campaigns and show you exactly where you're leaving money on the table.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get Free Campaign Audit</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

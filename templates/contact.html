@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Contact Us — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Contact</span></div>
+    <h1>Let's Start a Conversation</h1>
+    <p>Have a project in mind? A question about our services? Or just want to explore how EUKI can help your brand? We're here.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;">
+
+      <!-- Contact Info -->
+      <div>
+        <h2 class="section-title" style="text-align:left;font-size:1.8rem;">Reach Out <span>Anytime</span></h2>
+        <div class="divider divider-left" style="margin-bottom:28px;"></div>
+
+        {% for info in [
+          ('📍','Our Office','4th Floor, Digital Tower, AB Road, Indore — 452001, Madhya Pradesh, India'),
+          ('📞','Phone','<a href="tel:+917890123456" style="color:var(--blue-mid);">+91 789 012 3456</a>'),
+          ('✉️','Email','<a href="mailto:hello@eukiindia.com" style="color:var(--blue-mid);">hello@eukiindia.com</a>'),
+          ('🕐','Working Hours','Monday – Saturday: 9:30 AM – 7:00 PM IST'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;">
+          <div style="width:44px;height:44px;min-width:44px;background:var(--grad-brand);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">{{ info[0] }}</div>
+          <div>
+            <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:4px;">{{ info[1] }}</div>
+            <div style="color:var(--gray-600);font-size:.9rem;">{{ info[2]|safe }}</div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <div style="margin-top:28px;">
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:14px;">Connect on Social</div>
+          <div style="display:flex;gap:10px;">
+            {% for social in [('f','Facebook'),('in','Instagram'),('li','LinkedIn'),('tw','Twitter'),('yt','YouTube')] %}
+            <a href="#" style="width:40px;height:40px;background:var(--gray-100);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--gray-600);transition:var(--transition);" onmouseover="this.style.background='var(--blue-mid)';this.style.color='white'" onmouseout="this.style.background='var(--gray-100)';this.style.color='var(--gray-600)'">{{ social[0] }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="card" style="padding:40px;">
+        <h3 style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:28px;">Send Us a Message</h3>
+        <form method="POST" action="{{ url_for('contact') }}">
+          <div class="grid-2" style="gap:16px;">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" name="first_name" class="form-control" placeholder="Rahul" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" name="last_name" class="form-control" placeholder="Sharma" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" name="email" class="form-control" placeholder="rahul@yourbrand.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">How Can We Help?</label>
+            <select name="service" class="form-control">
+              <option value="">Select a service area</option>
+              <option>E-Commerce Marketing</option>
+              <option>Amazon Management</option>
+              <option>Flipkart Management</option>
+              <option>Digital Marketing</option>
+              <option>Web Development</option>
+              <option>Graphic Design & Videos</option>
+              <option>Product Photography</option>
+              <option>SEO Services</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Message *</label>
+            <textarea name="message" class="form-control" placeholder="Tell us about your brand, current challenges, and what you're hoping to achieve..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Business Enquiry — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Business Enquiry</span></div>
+    <h1>Request a Custom Quote</h1>
+    <p>Share your requirements and we'll build a tailored proposal with transparent pricing within 24–48 hours.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;">
+
+      <div class="card" style="padding:44px;">
+        <h3 style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:30px;">Tell Us About Your Project</h3>
+        <form method="POST" action="{{ url_for('business_enquiry') }}">
+          <div class="grid-2" style="gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Your Name *</label>
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Brand / Company Name *</label>
+              <input type="text" name="company" class="form-control" placeholder="Your Brand" required />
+            </div>
+          </div>
+          <div class="grid-2" style="gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input type="email" name="email" class="form-control" placeholder="name@brand.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone *</label>
+              <input type="tel" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Product Category</label>
+            <input type="text" name="category" class="form-control" placeholder="e.g. Electronics, Apparel, Beauty, Home Decor..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Services You're Interested In</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+              {% for svc in ['E-Commerce Marketing','Amazon Management','Flipkart Management','Digital Marketing','Web Development','Graphic Design','Product Photography','SEO Services'] %}
+              <label style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);cursor:pointer;">
+                <input type="checkbox" name="services" value="{{ svc }}" style="accent-color:var(--blue-mid);width:16px;height:16px;" />
+                {{ svc }}
+              </label>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Monthly Budget Range</label>
+            <select name="budget" class="form-control">
+              <option value="">Select your budget range</option>
+              <option>Below ₹15,000/month</option>
+              <option>₹15,000 – ₹30,000/month</option>
+              <option>₹30,000 – ₹60,000/month</option>
+              <option>₹60,000 – ₹1,00,000/month</option>
+              <option>Above ₹1,00,000/month</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project Description *</label>
+            <textarea name="description" class="form-control" rows="4" placeholder="Describe your current situation, goals, timeline, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Submit Enquiry →</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="section-label">Why Enquire with EUKI?</div>
+        <h2 class="section-title" style="text-align:left;font-size:1.8rem;">What Happens <span>After You Submit</span></h2>
+        <div class="divider divider-left" style="margin-bottom:24px;"></div>
+        {% for step in [
+          ('1','Confirmation Within 2 Hours','You\'ll receive an email confirmation and a pre-intake questionnaire to help us prepare.'),
+          ('2','Strategy Call Within 24 Hours','A senior specialist calls you to understand your goals in depth — no junior handoffs.'),
+          ('3','Custom Proposal in 48 Hours','A detailed, transparent proposal with scope, deliverables, timeline, and pricing.'),
+          ('4','Flexible Onboarding','Once you approve the proposal, onboarding begins within 3 working days.'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:24px;">
+          <div style="width:40px;height:40px;min-width:40px;background:var(--grad-brand);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;color:var(--white);">{{ step[0] }}</div>
+          <div>
+            <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:4px;">{{ step[1] }}</div>
+            <div style="font-size:.875rem;color:var(--gray-600);">{{ step[2] }}</div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <div style="background:var(--off-white);border-radius:var(--radius-md);padding:24px;margin-top:16px;">
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:12px;">✅ Our Commitment to You</div>
+          {% for c in ['No-pressure, consultative approach','100% transparent pricing — no hidden fees','Project kick-off within 3 days of approval','30-day results review for all new clients'] %}
+          <div style="display:flex;gap:8px;margin-bottom:8px;font-size:.875rem;color:var(--gray-600);">
+            <span style="color:var(--blue-mid);font-weight:700;">→</span> {{ c }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Flipkart Preferred Partner — EUKI India{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/partners">Partners</a><span class="breadcrumb-sep">›</span><span>Flipkart Partner</span></div>
+    <h1>🔵 Flipkart Preferred Partner</h1>
+    <p>As an official Flipkart service partner, EUKI India delivers marketplace services with platform-endorsed credibility and priority access.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+      <div>
+        <h2 class="section-title" style="text-align:left;">Preferred Partner <span>Advantages</span></h2>
+        <div class="divider divider-left" style="margin-bottom:20px;"></div>
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px;">Flipkart's partner program recognizes service providers who meet rigorous standards for seller services quality. Our preferred partner status means Flipkart vouches for our work — and your account benefits from that relationship.</p>
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-blue" style="margin-top:10px;">Partner With Us on Flipkart</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        {% for b in [('🎯','Seller Account Priority','Account issues escalated through dedicated Flipkart partner channels.'),('📊','Seller Insights Access','Early access to category performance data and buyer behavior reports.'),('🎓','Platform Training','Regular training sessions from Flipkart on policy updates and best practices.'),('🤝','Dedicated Point of Contact','A named Flipkart account manager available to resolve partner-level issues.')] %}
+        <div class="feature-item" style="background:var(--off-white);border-radius:var(--radius-md);">
+          <div class="feature-icon">{{ b[0] }}</div>
+          <div class="feature-content"><h4>{{ b[1] }}</h4><p>{{ b[2] }}</p></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

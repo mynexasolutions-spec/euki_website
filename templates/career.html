@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Career — Join the EUKI India Team{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Career</span></div>
+    <h1>Build Your Career at EUKI</h1>
+    <p>Join a team of 80+ passionate digital specialists who are reshaping India's e-commerce landscape — one brand at a time.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Life at EUKI</div>
+      <h2 class="section-title">Why Work With <span>Us?</span></h2>
+    </div>
+    <div class="grid-4">
+      {% for p in [
+        ('🚀','Fast Growth','Clear career ladders and internal promotions — 70% of our senior team started as junior specialists.'),
+        ('🎓','Continuous Learning','Monthly skill workshops, paid certifications, and access to premium learning platforms.'),
+        ('🤝','Collaborative Culture','Flat hierarchy, open-door leadership, and a team that genuinely celebrates each other\'s wins.'),
+        ('💰','Competitive Pay','Market-competitive salaries, performance bonuses, and annual increments tied to impact.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ p[0] }}</div>
+        <h3>{{ p[1] }}</h3>
+        <p>{{ p[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Open Positions</div>
+      <h2 class="section-title">Current <span>Openings</span></h2>
+      <p class="section-subtitle">We're always looking for exceptional talent. If you don't see your role listed, send us your profile anyway.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:800px;margin:0 auto;">
+      {% for job in [
+        ('Amazon Account Manager','E-Commerce','Indore / Hybrid','Full-time','2+ yrs Seller Central experience, ads management background'),
+        ('Digital Marketing Executive','Marketing','Indore','Full-time','Meta Ads, Google Ads, content planning, analytics tools'),
+        ('Shopify Developer','Web Development','Remote','Full-time','Shopify theme development, Liquid, JavaScript, app integration'),
+        ('Graphic Designer','Creative','Indore','Full-time','Photoshop, Illustrator, After Effects, marketplace creatives'),
+        ('Content Writer & SEO Specialist','SEO/Content','Remote','Full-time','Long-form writing, keyword research, on-page optimization'),
+        ('Business Development Executive','Sales','Indore','Full-time','B2B outreach, lead qualification, proposal presentation'),
+      ] %}
+      <div class="card" style="padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">{{ job[0] }}</h4>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <span class="badge badge-blue">{{ job[1] }}</span>
+              <span class="badge badge-green">{{ job[2] }}</span>
+              <span class="tag" style="font-size:.75rem;">{{ job[3] }}</span>
+            </div>
+            <p style="font-size:.83rem;color:var(--gray-600);margin-top:8px;">{{ job[4] }}</p>
+          </div>
+          <a href="{{ url_for('contact') }}" class="btn btn-blue btn-sm">Apply Now</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Don't See Your Role? We Still Want to Meet You.</h2>
+      <p>Send your resume and a short note about what you'd bring to the team — we review every application personally.</p>
+      <a href="mailto:careers@eukiindia.com" class="btn btn-primary btn-lg">Send Your Resume</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

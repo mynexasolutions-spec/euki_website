@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Etsy Selling Services — EUKI India{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/ecommerce">E-Commerce</a><span class="breadcrumb-sep">›</span><span>Etsy</span></div>
+    <h1>🎨 Etsy Management</h1>
+    <p>Export your handcrafted, artisanal, and custom products to millions of buyers across the globe.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('🏪','Shop Setup','Full Etsy shop creation — branding, policies, shipping profiles, and payment setup for Indian sellers.'),
+        ('🌍','Cross-Border Compliance','GST LUT filing, export documentation, and international shipping guidance for Etsy sellers.'),
+        ('🔍','Etsy SEO','Keyword research and tag optimization to rank higher in Etsy\'s unique search algorithm.'),
+        ('📸','Listing Photography','Etsy-style lifestyle photography that resonates with global buyers and increases click-through rates.'),
+        ('📢','Etsy Ads','Offsite and onsite Etsy ads management to scale to new audiences cost-effectively.'),
+        ('⭐','Review & Rating Strategy','Post-purchase follow-up workflows to build 5-star reviews and repeat business.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:48px;" class="cta-banner">
+      <h2>Take Indian Craftsmanship to the World</h2>
+      <p>Launch your Etsy shop and start receiving international orders within 2 weeks.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Open Your Etsy Shop</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

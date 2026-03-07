@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found — EUKI India{% endblock %}
+
+{% block content %}
+<section style="padding:120px 0;text-align:center;">
+  <div class="container">
+    <div style="font-size:6rem;margin-bottom:20px;">🔍</div>
+    <h1 style="font-family:var(--font-head);font-size:4rem;font-weight:900;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;">404</h1>
+    <h2 style="font-family:var(--font-head);font-size:1.8rem;color:var(--text-dark);margin-bottom:16px;">Page Not Found</h2>
+    <p style="color:var(--gray-600);max-width:440px;margin:0 auto 36px;line-height:1.8;">The page you're looking for doesn't exist or may have been moved. Let's get you back on track.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg">← Back to Home</a>
+      <a href="{{ url_for('contact') }}" class="btn btn-outline btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

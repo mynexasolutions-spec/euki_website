@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Product Photography — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Product Photography</span></div>
+    <h1>📷 Product Photography</h1>
+    <p>Professional imagery that makes your products look their very best — on every marketplace and every device.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('⬜','White Background Photography','Clean, marketplace-compliant shots on pure white backgrounds — meeting Amazon, Flipkart, and Nykaa specs.'),
+        ('🌿','Lifestyle Photography','Contextual images showing your product in use — building emotional connection and increasing conversion rates.'),
+        ('🔄','360° Spin Photography','Interactive 360° product spins for premium listings that let shoppers examine every angle.'),
+        ('📐','Detail & Texture Shots','Macro close-ups showcasing material quality, craftsmanship, and product features that build shopper confidence.'),
+        ('📦','Packaging Shots','Beautifully lit packaging photography for gifting brands, subscription boxes, and premium products.'),
+        ('🎬','Product Videos','Short demo clips and feature highlight videos that reduce return rates and increase add-to-cart.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>First Impressions Win Sales</h2>
+      <p>Book a product photography session at our Indore studio — or arrange a pickup for your products.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Book a Shoot</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

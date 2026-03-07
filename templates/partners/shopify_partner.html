@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Shopify Partner — EUKI India{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/partners">Partners</a><span class="breadcrumb-sep">›</span><span>Shopify Partner</span></div>
+    <h1>🛍 Shopify Partner</h1>
+    <p>Certified Shopify Partner building high-performance D2C stores for Indian brands going direct to consumer.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('🏗️','Custom Shopify Development','Bespoke theme development, custom apps, and tailored checkout experiences that reflect your brand perfectly.'),
+        ('⚡','Shopify Speed Optimization','Core Web Vitals tuning, image compression, and code optimization for sub-2-second load times.'),
+        ('🔗','Third-Party Integrations','ERP, CRM, marketplace sync, payment gateway, and logistics integrations configured and tested.'),
+        ('📱','Mobile-First Design','Shopify stores designed mobile-first — where 80%+ of Indian D2C traffic originates.'),
+        ('🔄','Migration Services','Seamless migration from WooCommerce, Magento, or custom platforms to Shopify with zero data loss.'),
+        ('📊','Conversion Optimization','A/B testing, upsell flows, abandoned cart recovery, and checkout optimization to maximize revenue per visitor.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:48px;" class="cta-banner">
+      <h2>Build Your Dream Shopify Store</h2>
+      <p>Get a free Shopify store audit or a no-obligation project proposal within 24 hours.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Start Your Shopify Project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

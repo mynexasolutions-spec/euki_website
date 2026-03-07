@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}E-Commerce Platforms — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>E-Commerce</span></div>
+    <h1>Marketplace Expertise Across Every Platform</h1>
+    <p>Specialized account management, advertising, and growth strategies tailored to each marketplace's unique algorithm and buyer behavior.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-4">
+      {% for p in [
+        ('🛒','Amazon','ecommerce.amazon','Account management, FBA, advertising, A+ content, and storefront for India & USA marketplaces.'),
+        ('🔵','Flipkart','ecommerce.flipkart','Account launch, RPD management, advertising, and catalog management for India\'s second largest marketplace.'),
+        ('🩷','Meesho','ecommerce.meesho','Social commerce strategy and reseller network growth on India\'s fastest-growing platform.'),
+        ('💄','Nykaa','ecommerce.nykaa','Beauty and wellness brand positioning, listing optimization, and advertising on Nykaa.'),
+        ('🛍','JioMart','ecommerce.jiomart','Hyperlocal commerce setup, inventory management, and listing for JioMart\'s growing customer base.'),
+        ('🎨','Etsy','ecommerce.etsy','Export handmade, vintage, and custom products to global buyers through Etsy\'s marketplace.'),
+        ('🏪','Walmart','ecommerce.walmart','US Walmart marketplace account setup, listing compliance, and scaling for Indian sellers going global.'),
+      ] %}
+      <div class="platform-card">
+        <div class="p-icon">{{ p[0] }}</div>
+        <h3>{{ p[1] }}</h3>
+        <p>{{ p[3] }}</p>
+        <br/>
+        <a href="{{ url_for(p[2]) }}" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;">Learn More</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Which Platform is Right for Your Brand?</h2>
+      <p>Our marketplace strategists will assess your product category, margin structure, and target audience to recommend the best platform mix.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get Platform Recommendation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

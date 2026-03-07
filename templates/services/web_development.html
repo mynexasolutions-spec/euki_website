@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Web Development Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Web Development</span></div>
+    <h1>💻 Web Development</h1>
+    <p>Conversion-first websites and online stores — built fast, designed beautifully, and engineered for scale.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Tech We Build On</div>
+      <h2 class="section-title">The Right Platform for <span>Every Brand</span></h2>
+    </div>
+    <div class="grid-4" data-tabs>
+      {% for tech in [
+        ('🛍','Shopify','D2C stores with powerful apps, fast checkout, and seamless payment integrations for Indian and global markets.'),
+        ('📝','WordPress','Flexible CMS-powered sites for brands, agencies, and informational portals — SEO-ready from day one.'),
+        ('🎨','UI/UX Design','Research-backed interface design that puts your user's journey first — wireframes, prototypes, and handoff-ready files.'),
+        ('🌐','WIX & Others','Quick-launch landing pages, portfolio sites, and microsites for campaigns and product launches.'),
+      ] %}
+      <div class="card" style="padding:30px;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:16px;">{{ tech[0] }}</div>
+        <h3 style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:12px;">{{ tech[1] }}</h3>
+        <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">{{ tech[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Deliverables</div>
+      <h2 class="section-title">What You Get With <span>Every Project</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for d in [
+        ('⚡','Lightning-Fast Performance','Google Core Web Vitals optimized — your site loads in under 2 seconds on mobile.'),
+        ('📱','Fully Responsive','Pixel-perfect experience across mobile, tablet, and desktop browsers.'),
+        ('🔒','Secure & Maintained','SSL, regular security audits, and 30-day post-launch support included.'),
+        ('🔍','SEO-Ready Structure','Clean code, semantic HTML, and proper meta setup from the very first page.'),
+        ('💳','Payment Integrations','Razorpay, Paytm, Stripe, and COD workflows configured for smooth checkout.'),
+        ('📊','Analytics & Tracking','GA4, Meta Pixel, and heatmap tools set up so you know exactly where conversions come from.'),
+      ] %}
+      <div class="feature-item">
+        <div class="feature-icon">{{ d[0] }}</div>
+        <div class="feature-content">
+          <h4>{{ d[1] }}</h4>
+          <p>{{ d[2] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Get a Website That Actually Converts</h2>
+      <p>Share your requirements and get a no-obligation proposal with timeline and pricing within 24 hours.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Request a Proposal</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

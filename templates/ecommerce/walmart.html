@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Walmart Marketplace Services — EUKI India{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/ecommerce">E-Commerce</a><span class="breadcrumb-sep">›</span><span>Walmart</span></div>
+    <h1>🏪 Walmart Marketplace</h1>
+    <p>Break into the US retail market through Walmart.com — America's second-largest online marketplace.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Seller Account Setup','Walmart seller application, approval assistance, and account configuration for Indian exporters.'),
+        ('✅','Listing Compliance','US-market compliant titles, descriptions, and attributes formatted to Walmart\'s strict content guidelines.'),
+        ('📢','Walmart Advertising','Sponsored product campaigns on Walmart\'s ad platform to drive visibility and initial sales velocity.'),
+        ('🌍','Export Documentation','US import compliance, HS codes, and customs documentation for Indian goods entering the US market.'),
+        ('💰','Pricing & Buy Box','Competitive pricing strategies to win the Walmart Buy Box and maximize order volume.'),
+        ('🚚','Fulfillment Strategy','WFS (Walmart Fulfillment Services) setup or third-party 3PL integration for fast US delivery.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:48px;" class="cta-banner">
+      <h2>Enter the US Market Through Walmart</h2>
+      <p>Our Walmart specialists will guide you from application to first sale in the US.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Explore Walmart Selling</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

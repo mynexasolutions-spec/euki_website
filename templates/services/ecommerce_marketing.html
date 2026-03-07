@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}E-Commerce Marketing Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>E-Commerce Marketing</span></div>
+    <h1>🛒 E-Commerce Marketing</h1>
+    <p>Full-spectrum marketplace management that converts browsers to loyal buyers — at scale.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What's Included</div>
+      <h2 class="section-title">Everything Your <span>Marketplace</span> Needs</h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Account Management','End-to-end seller account oversight — health monitoring, policy compliance, and performance optimization.'),
+        ('📢','Marketplace Advertising','Sponsored product, brand, and display ads managed by certified specialists to maximize ROAS.'),
+        ('🔄','Account Reinstatement','Suspended or flagged accounts reinstated quickly using proven appeal strategies.'),
+        ('🚀','Account Launch','New seller onboarding, brand registry, GSTIN setup, and first-listing optimization from day one.'),
+        ('✨','A+ Content & EBC','Rich product description pages with comparison charts, lifestyle images, and brand storytelling.'),
+        ('🏪','Storefront Creation','Custom branded storefronts that showcase your entire catalog and build shopper trust.'),
+        ('📦','Listing & Cataloging','Keyword-rich product listings across single and variation setups on all major marketplaces.'),
+        ('🎬','Product Videos','Short-form demo videos that increase conversion rates and reduce returns.'),
+        ('📊','Performance Reporting','Weekly and monthly dashboards tracking GMV, sessions, conversion rate, and ad spend efficiency.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div class="section-label">Platforms We Cover</div>
+        <h2 class="section-title" style="text-align:left;">We Manage Accounts on <span>Every Major Marketplace</span></h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('🛒','Amazon India & USA','Account management, FBA/FBM, PAN India reach'),
+            ('🔵','Flipkart','Marketplace, F-Assured, and Smart Fulfillment'),
+            ('🩷','Meesho','Social commerce and reseller-led selling'),
+            ('💄','Nykaa','Beauty, wellness, and personal care verticals'),
+            ('🛍','JioMart','Kirana-linked and online grocery/FMCG sales'),
+          ] %}
+          <div style="display:flex;align-items:center;gap:16px;background:var(--white);padding:16px 20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.8rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.82rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Average Results After 90 Days</h3>
+        {% for r in [('320%','Increase in organic sessions'),('2.8x','Return on ad spend (ROAS)'),('45%','Reduction in ACOS'),('180%','Growth in monthly GMV')] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Get These Results →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to Dominate Your Category?</h2>
+      <p>Our marketplace experts will audit your current account for free and build a 90-day action plan.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Claim Free Account Audit</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

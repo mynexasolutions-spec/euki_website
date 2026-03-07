@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Graphic Design & Video Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Graphic Design & Videos</span></div>
+    <h1>🎨 Graphic Design & Videos</h1>
+    <p>Creative work that stops the scroll — from product infographics to brand films that convert viewers into buyers.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('🏷️','Branding & Identity','Logo design, brand guidelines, color palettes, and typography systems that create a cohesive brand presence.'),
+        ('🖼️','Marketplace Creatives','A+ content images, comparison infographics, and secondary images optimized for Amazon, Flipkart, and Nykaa.'),
+        ('🎬','Video Creation & Editing','Product demos, explainer animations, brand films, and social media reels — scripted, shot, and edited in-house.'),
+        ('🔷','3D Modeling & Rendering','Photorealistic 3D product renders for premium listings and campaigns — without needing a physical sample.'),
+        ('📱','Social Media Graphics','Scroll-stopping posts, stories, and ad creatives designed for each platform's optimal format and audience.'),
+        ('📦','Packaging Design','Unboxing-worthy packaging that represents your brand and creates memorable customer experiences.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Make Your Brand Impossible to Ignore</h2>
+      <p>Share your brief and get a creative proposal with sample concepts within 48 hours.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Start a Creative Project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

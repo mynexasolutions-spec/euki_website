@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}SEO Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>SEO Services</span></div>
+    <h1>🔍 SEO Services</h1>
+    <p>Organic visibility that compounds over time — driving qualified traffic without paying per click.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for svc in [
+        ('🗝️','Keyword Research & Strategy','Deep competitor analysis and intent mapping to target keywords that attract buyers, not just browsers.'),
+        ('🏗️','Technical SEO Audits','Site speed, crawlability, schema markup, Core Web Vitals — fixing the foundation that holds rankings back.'),
+        ('✍️','Content Strategy & Writing','SEO-optimized blog posts, category pages, and landing pages that rank and convert.'),
+        ('🔗','Link Building','White-hat backlink acquisition from relevant, authoritative Indian and global domains.'),
+        ('📊','Rank Tracking & Reporting','Monthly ranking reports, traffic analysis, and clear attribution from organic keywords to revenue.'),
+        ('🛒','Marketplace SEO','Keyword optimization for Amazon, Flipkart, and Nykaa listings — the search engines that buy.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ svc[0] }}</div>
+        <h3>{{ svc[1] }}</h3>
+        <p>{{ svc[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Rank Higher. Earn More.</h2>
+      <p>Get a free SEO audit report for your website — delivered in 48 hours with actionable recommendations.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Request Free SEO Audit</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

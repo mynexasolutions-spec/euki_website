@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Flipkart Account Management — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/ecommerce">E-Commerce</a><span class="breadcrumb-sep">›</span><span>Flipkart</span></div>
+    <h1>🔵 Flipkart Management</h1>
+    <p>Expert Flipkart account services — from onboarding to RPD management, advertising, and F-Assured eligibility.</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Account Management','Full Flipkart seller account oversight including health score improvement and policy compliance.'),
+        ('📢','Flipkart Advertising','PLA campaigns, display ads, and brand solutions to increase visibility in Flipkart search.'),
+        ('📊','RPD Management','Return, protection, and damage claim management to recover costs and protect account health.'),
+        ('🚀','Account Launch','New seller onboarding, category approval, and listing activation on Flipkart marketplace.'),
+        ('⭐','F-Assured Program','Meeting quality thresholds for F-Assured certification to boost buyer trust and conversion.'),
+        ('📦','Catalog Management','Structured listing creation with accurate attributes, images, and category placements.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Grow Your Flipkart Revenue</h2>
+      <p>Let our Flipkart specialists audit your account and create a 60-day growth plan.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Start on Flipkart</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

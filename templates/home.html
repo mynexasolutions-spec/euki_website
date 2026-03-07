@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+{% block title %}EUKI India Pvt. Ltd. — Digital Growth Starts Here{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content animate-fade-up">
+      <div class="breadcrumb" style="color:rgba(255,255,255,.65);margin-bottom:20px;">
+        <span>🚀 India's Fastest Growing Digital Commerce Agency</span>
+      </div>
+      <h1 class="hero-title">
+        Scale Smarter.<br/>
+        Sell <span>Everywhere.</span><br/>
+        Grow Faster.
+      </h1>
+      <p class="hero-subtitle">
+        EUKI India powers brands across Amazon, Flipkart, Meesho, Nykaa, and 15+ global marketplaces — combining expert account management, result-driven marketing, and cutting-edge web solutions.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">🚀 Start Your Journey</a>
+        <a href="{{ url_for('services') }}" class="btn btn-secondary btn-lg">Explore Services</a>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-fade-up delay-3">
+      <div class="hero-card-grid">
+        <div class="hero-mini-card animate-float">
+          <div class="icon">🛒</div>
+          <h4>7+ Platforms</h4>
+          <p>Amazon, Flipkart & more</p>
+        </div>
+        <div class="hero-mini-card animate-float delay-2">
+          <div class="icon">📈</div>
+          <h4>500+ Brands</h4>
+          <p>Trusted by sellers</p>
+        </div>
+        <div class="hero-mini-card animate-float delay-3">
+          <div class="icon">🎯</div>
+          <h4>3x ROI Avg</h4>
+          <p>Ad campaign results</p>
+        </div>
+        <div class="hero-mini-card animate-float delay-4">
+          <div class="icon">🌐</div>
+          <h4>Global Reach</h4>
+          <p>India, USA & beyond</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUSTED PLATFORMS STRIP ────────────────────────────────── -->
+<section class="section-sm" style="background:var(--gray-50);border-bottom:1px solid var(--gray-100);">
+  <div class="container text-center">
+    <p style="font-family:var(--font-head);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:24px;">Marketplace Partners We Work With</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;">
+      {% for p in [('🛒','Amazon'),('🔵','Flipkart'),('🩷','Meesho'),('💄','Nykaa'),('🛍','JioMart'),('🎨','Etsy'),('🏪','Walmart')] %}
+      <div style="display:flex;align-items:center;gap:8px;color:var(--gray-600);font-family:var(--font-head);font-size:.95rem;font-weight:600;">
+        <span style="font-size:1.5rem;">{{ p[0] }}</span> {{ p[1] }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ─────────────────────────────────────────────────── -->
+<section class="section-brand section">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-card">
+        <div class="stat-num" data-target="500" data-suffix="+">0+</div>
+        <div class="stat-label">Brands Empowered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="7" data-suffix="">0</div>
+        <div class="stat-label">Marketplace Platforms</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="98" data-suffix="%">0%</div>
+        <div class="stat-label">Client Retention Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="6" data-suffix="+">0+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY EUKI ───────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div class="section-label">Why Choose EUKI?</div>
+        <h2 class="section-title" style="text-align:left;">Innovate, Execute, <span>Dominate</span> Your Market</h2>
+        <div class="divider divider-left" style="margin-bottom:24px;"></div>
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:30px;">
+          We don't just manage your accounts — we become an extension of your team. With a blend of marketplace expertise, data-driven strategies, and creative excellence, EUKI delivers measurable outcomes that fuel long-term brand growth.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          {% for f in [
+            ('📊','Data-First Strategy','Every campaign decision is backed by real-time analytics, search trends, and competitive intelligence.'),
+            ('🤝','Dedicated Account Teams','A specialist team is assigned to your brand — no handoffs, no confusion, consistent results.'),
+            ('⚡','Rapid Execution','From onboarding to live listings in record time — we move at the speed of commerce.'),
+            ('🔄','End-to-End Management','From content creation and cataloging to advertising and customer support — we handle it all.'),
+          ] %}
+          <div class="feature-item">
+            <div class="feature-icon">{{ f[0] }}</div>
+            <div class="feature-content">
+              <h4>{{ f[1] }}</h4>
+              <p>{{ f[2] }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;margin-bottom:24px;">Our Impact by Numbers</h3>
+        {% for item in [
+          ('₹50 Cr+','GMV generated for clients in 2023'),
+          ('300%','Average revenue growth after 6 months'),
+          ('24 hrs','Average response time for support tickets'),
+          ('15+','Cities with active brand presence'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;">
+          <div style="background:rgba(255,255,255,.15);border-radius:10px;padding:10px 16px;font-family:var(--font-head);font-size:1.3rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ item[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:8px;">{{ item[1] }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES GRID ──────────────────────────────────────────── -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Comprehensive <span>Digital Solutions</span></h2>
+      <p class="section-subtitle">From building your storefront to running your ads — a single agency that covers every touchpoint of your digital journey.</p>
+    </div>
+    <div class="grid-3">
+      {% for svc in [
+        ('🛒','E-Commerce Marketing','Account management, listing optimization, and advertising across Amazon, Flipkart, Meesho, and more.','ecommerce_marketing'),
+        ('📣','Digital Marketing','SEO, social media, PPC, and influencer campaigns that generate qualified leads and brand awareness.','digital_marketing'),
+        ('💻','Web Development','Custom WordPress, Shopify, and UI/UX solutions built for speed, conversion, and user experience.','web_development'),
+        ('🎨','Graphic Design & Videos','Scroll-stopping creatives — from product infographics to brand videos that convert browsers to buyers.','graphic_designing'),
+        ('📷','Product Photography','Professional studio shoots and 360° imagery that make your products stand out on every marketplace.','product_photography'),
+        ('🔍','SEO Services','Technical SEO, content strategy, and keyword mapping that push your brand to the top of search results.','seo'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ svc[0] }}</div>
+        <h3>{{ svc[1] }}</h3>
+        <p>{{ svc[2] }}</p>
+        <a href="{{ url_for(svc[3]) }}" class="card-link">Explore Service →</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Process</div>
+      <h2 class="section-title">Getting Started is <span>Simple</span></h2>
+      <p class="section-subtitle">Four clear steps from first contact to full-scale launch — designed to minimize friction and maximize your speed to market.</p>
+    </div>
+    <div class="process-steps">
+      {% for step in [
+        ('01','Discovery Call','We analyze your brand, goals, and competition to define the best strategy for your category.'),
+        ('02','Strategy Blueprint','Our specialists craft a tailored roadmap covering platforms, content, pricing, and ad spend.'),
+        ('03','Launch & Optimize','We execute the plan — setting up accounts, creating content, and activating campaigns.'),
+        ('04','Scale & Report','Monthly reports, continuous A/B testing, and scaling what works to compound your growth.'),
+      ] %}
+      <div class="step">
+        <div class="step-num">{{ step[0] }}</div>
+        <h4>{{ step[1] }}</h4>
+        <p>{{ step[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── PLATFORM CARDS ─────────────────────────────────────────── -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Marketplace Expertise</div>
+      <h2 class="section-title">Every Platform, <span>Mastered</span></h2>
+      <p class="section-subtitle">Whether you're launching on a new channel or scaling an existing one, our platform-specific expertise gives you an edge.</p>
+    </div>
+    <div class="grid-4">
+      {% for p in [
+        ('🛒','Amazon','India & USA marketplace management, ads, A+ content'),
+        ('🔵','Flipkart','RPD, account launch, ads, and performance management'),
+        ('🩷','Meesho','Social commerce strategy and reseller network growth'),
+        ('💄','Nykaa','Beauty & wellness brand positioning and listing'),
+        ('🛍','JioMart','Hyperlocal commerce and inventory management'),
+        ('🎨','Etsy','Handcrafted & custom product export to global buyers'),
+        ('🏪','Walmart','US retail marketplace account setup and scaling'),
+        ('🌐','Own Website','Shopify / WordPress stores built for conversion'),
+      ] %}
+      <div class="platform-card">
+        <div class="p-icon">{{ p[0] }}</div>
+        <h3>{{ p[1] }}</h3>
+        <p>{{ p[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Client Stories</div>
+      <h2 class="section-title">Real Brands, <span>Real Results</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for t in [
+        ('Switched to EUKI after two years of stagnant growth. Within 90 days, our Amazon revenue was up 280% and our ad cost dropped by 35%. Absolute game-changers.','Priya Sharma','Fashion Brand Owner','PS'),
+        ('Our Flipkart account was heading for suspension. EUKI reinstated it, rebuilt our catalog, and now we rank on the first page for 40+ keywords. Incredible turnaround.','Rajesh Patel','Electronics Seller','RP'),
+        ('The web development team built our Shopify store in just 3 weeks. Clean design, fast checkout, and it actually converts — our D2C sales tripled in 4 months.','Anita Verma','Skincare D2C Brand','AV'),
+      ] %}
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"{{ t[0] }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">{{ t[3] }}</div>
+          <div>
+            <div class="author-name">{{ t[1] }}</div>
+            <div class="author-title">{{ t[2] }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ────────────────────────────────────────────── -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to 10x Your Online Revenue?</h2>
+      <p>Book a free strategy session with our experts and get a customized growth plan for your brand — completely free, no strings attached.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get Free Consultation</a>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-lg">Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <div class="section-label">Frequently Asked</div>
+        <h2 class="section-title" style="text-align:left;">Got <span>Questions?</span></h2>
+        <div class="divider divider-left" style="margin-bottom:20px;"></div>
+        <p style="color:var(--gray-600);line-height:1.9;">
+          We're transparent about what we do and how we work. Here are answers to the questions we hear most often from new clients.
+        </p>
+        <br/>
+        <a href="{{ url_for('contact') }}" class="btn btn-blue">Ask Us Directly</a>
+      </div>
+      <div>
+        {% for faq in [
+          ('How quickly can you onboard my brand?','Most brands are fully onboarded within 5–7 business days. Urgent setups can be done in 48 hours.'),
+          ('Do you work with new sellers or only established ones?','Both! We have specialized packages for brand-new sellers entering their first marketplace and for scaling brands looking to expand.'),
+          ('Which marketplaces do you support?','Amazon India & USA, Flipkart, Meesho, Nykaa, JioMart, Etsy, Walmart, and your own D2C website.'),
+          ('How do you measure success?','We track GMV, ACOS/ROAS, organic ranking, conversion rates, and return rate — and share detailed monthly reports.'),
+          ('Can I hire EUKI for just one service?','Yes. Our modular approach lets you pick only what you need — ads management, listing, photography, or web dev.'),
+        ] %}
+        <div class="accordion-item">
+          <button class="accordion-btn">{{ faq[0] }} <span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><p>{{ faq[1] }}</p></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

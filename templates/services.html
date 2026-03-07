@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Our Services — EUKI India Pvt. Ltd.{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Services</span></div>
+    <h1>End-to-End Digital Services</h1>
+    <p>One agency for every digital need — from marketplace management to brand identity, web development to photoshoots.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for svc in [
+        ('🛒','E-Commerce Marketing','Full-service account management across Amazon, Flipkart, Meesho, and more — listings, ads, A+ content, and growth strategies.','ecommerce_marketing'),
+        ('📣','Digital Marketing','360° digital campaigns — PPC, social media marketing, influencer partnerships, email automation, and retargeting.','digital_marketing'),
+        ('💻','Web Development','Custom storefront builds on Shopify, WordPress, WIX, and bespoke UI/UX — designed to convert and built to last.','web_development'),
+        ('🎨','Graphic Design & Videos','From brand logos to product infographics, explainer videos to reels — creative work that stops the scroll.','graphic_designing'),
+        ('📷','Product Photography','Studio and lifestyle shoots, 360° spinning videos, and white-background images that meet marketplace specs.','product_photography'),
+        ('🔍','SEO Services','On-page optimization, technical SEO audits, keyword strategy, and backlink building to dominate organic search.','seo'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ svc[0] }}</div>
+        <h3>{{ svc[1] }}</h3>
+        <p>{{ svc[2] }}</p>
+        <a href="{{ url_for(svc[3]) }}" class="card-link">Learn More →</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Not Sure Which Service You Need?</h2>
+      <p>Book a free audit call — our team will assess your current setup and recommend exactly what will move the needle for your brand.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get a Free Audit</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
