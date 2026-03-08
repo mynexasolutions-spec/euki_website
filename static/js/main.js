@@ -24,26 +24,51 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
 
+  function closeAllSubDropdowns() {
+    document.querySelectorAll('.dropdown.open, .mega-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+
+  function closeNav() {
+    hamburger?.classList.remove('open');
+    navMenu?.classList.remove('open');
+    closeAllSubDropdowns();
+  }
+
   hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navMenu?.classList.toggle('open');
+    const isOpen = hamburger.classList.contains('open');
+    if (isOpen) {
+      closeNav();
+    } else {
+      hamburger.classList.add('open');
+      navMenu?.classList.add('open');
+    }
   });
 
   // Close nav on outside click
   document.addEventListener('click', (e) => {
     if (!navbar?.contains(e.target)) {
-      hamburger?.classList.remove('open');
-      navMenu?.classList.remove('open');
+      closeNav();
+    }
+  });
+
+  // Reset mobile nav state if viewport grows past mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      closeNav();
     }
   });
 
   // ── Mobile dropdown toggles ───────────────────────────
   document.querySelectorAll('.nav-link[data-toggle]').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1024) {
         e.preventDefault();
         const parent = btn.closest('.nav-item');
         const dropdown = parent?.querySelector('.dropdown, .mega-dropdown');
+        // Close other open dropdowns first
+        document.querySelectorAll('.dropdown.open, .mega-dropdown.open').forEach(d => {
+          if (d !== dropdown) d.classList.remove('open');
+        });
         dropdown?.classList.toggle('open');
       }
     });

@@ -12,7 +12,7 @@
 
 <section class="section">
   <div class="container" style="max-width:820px;">
-    <div class="card" style="padding:48px;">
+    <div class="card policy-card">
       {% for section in [
         ('1. Acceptance of Terms', 'By accessing eukiindia.com or engaging with EUKI India Pvt. Ltd.\'s services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please discontinue use of our website and services.'),
         ('2. Services', 'EUKI India provides e-commerce marketplace management, digital marketing, web development, graphic design, product photography, and related digital services. The scope of services in any engagement is defined in the individual Service Agreement or Statement of Work signed between EUKI India and the client.'),
@@ -25,8 +25,8 @@
         ('9. Governing Law', 'These Terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Indore, Madhya Pradesh.'),
         ('10. Amendments', 'EUKI India reserves the right to update these Terms at any time. Continued use of our services after updates constitutes acceptance of the revised terms. Clients will be notified of material changes via email.'),
       ] %}
-      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin:28px 0 10px;">{{ section[0] }}</h3>
-      <p style="color:var(--gray-600);line-height:1.9;font-size:.92rem;">{{ section[1] }}</p>
+      <h3>{{ section[0] }}</h3>
+      <p>{{ section[1] }}</p>
       {% endfor %}
     </div>
   </div>

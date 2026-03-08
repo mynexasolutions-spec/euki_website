@@ -12,7 +12,7 @@
 
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;">
+    <div class="enquiry-grid">
 
       <div class="card" style="padding:44px;">
         <h3 style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:30px;">Tell Us About Your Project</h3>
@@ -43,7 +43,7 @@
           </div>
           <div class="form-group">
             <label class="form-label">Services You're Interested In</label>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+            <div class="grid-2" style="gap:8px;margin-top:8px;">
               {% for svc in ['E-Commerce Marketing','Amazon Management','Flipkart Management','Digital Marketing','Web Development','Graphic Design','Product Photography','SEO Services'] %}
               <label style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);cursor:pointer;">
                 <input type="checkbox" name="services" value="{{ svc }}" style="accent-color:var(--blue-mid);width:16px;height:16px;" />

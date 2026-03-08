@@ -12,7 +12,7 @@
 
 <section class="section">
   <div class="container" style="max-width:820px;">
-    <div class="card" style="padding:48px;">
+    <div class="card policy-card">
       {% for section in [
         ('1. Overview', 'EUKI India Pvt. Ltd. is committed to delivering measurable results and maintaining high standards of service quality. This policy outlines the terms under which refunds or cancellations may be requested and processed.'),
         ('2. Service Cancellations', 'Clients may cancel ongoing retainer services by providing a minimum of 30 days\' written notice via email to hello@eukiindia.com. Cancellations take effect at the end of the current billing cycle. Services already rendered within the notice period are non-refundable.'),
@@ -23,8 +23,8 @@
         ('7. Force Majeure', 'EUKI India is not liable for delays or non-performance caused by circumstances beyond our reasonable control, including natural disasters, government actions, platform policy changes, or internet outages. Such circumstances do not entitle clients to a refund.'),
         ('8. Contact for Refund Requests', 'To initiate a refund or cancellation, please contact: Email: billing@eukiindia.com | Phone: +91 789 012 3456 | Address: EUKI India Pvt. Ltd., 4th Floor, Digital Tower, AB Road, Indore — 452001.'),
       ] %}
-      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin:28px 0 10px;">{{ section[0] }}</h3>
-      <p style="color:var(--gray-600);line-height:1.9;font-size:.92rem;">{{ section[1] }}</p>
+      <h3>{{ section[0] }}</h3>
+      <p>{{ section[1] }}</p>
       {% endfor %}
     </div>
   </div>
