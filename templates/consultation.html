@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Business Consultation Services — EUKI India Pvt. Ltd.{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Business Consultation</span></div>
+    <h1>🏛️ Business Consultation Services</h1>
+    <p>From registering your company to protecting your brand — EUKI India's legal and compliance experts handle every step so you can focus on growing your business.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Consultation Services</div>
+      <h2 class="section-title">Everything You Need to <span>Start, Run & Protect</span> Your Business</h2>
+      <p class="section-subtitle">Expert guidance across company formation, taxation, legal compliance, and brand protection — all under one roof, entirely online.</p>
+    </div>
+    <div class="grid-2" style="gap:32px;">
+      {% for svc in [
+        ('🏢','Company Registration','/business-consultation/company-registration','Register your Private Limited, OPC, LLP, or Partnership firm with MCA — hassle-free, 100% online, in 7–10 working days.','Start Registration →'),
+        ('📄','GST Services','/business-consultation/gst-service','New GST registration, return filing (GSTR-1, 3B, 9), amendments, cancellations, and GST health audits for businesses of all sizes.','Get GST Help →'),
+        ('⚖️','Legal Services','/business-consultation/legal-service','Drafting and review of business contracts, NDAs, employment agreements, vendor agreements, and startup legal compliance packages.','Consult a Lawyer →'),
+        ('™️','Trademark Registration','/business-consultation/trademark-registration','Protect your brand name and logo with a registered trademark under the Trade Marks Act, 1999 — fast, affordable, and expert-managed.','Register Your Brand →'),
+      ] %}
+      <div class="card service-card" style="display:flex;flex-direction:column;gap:16px;">
+        <div class="icon-wrap" style="font-size:2.2rem;">{{ svc[0] }}</div>
+        <h3 style="font-family:var(--font-head);font-size:1.25rem;font-weight:800;color:var(--text-dark);">{{ svc[1] }}</h3>
+        <p style="color:var(--gray-600);line-height:1.75;flex-grow:1;">{{ svc[3] }}</p>
+        <a href="{{ svc[2] }}" class="card-link">{{ svc[4] }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">Why Choose EUKI?</div>
+        <h2 class="section-title" style="text-align:left;">India's <span>Trusted Compliance</span> Partner for Digital Businesses</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('✅','100% Online Process','Submit documents digitally — no physical visits, no delays.'),
+            ('⏱️','Fast Turnaround','Most registrations and filings completed within 3–10 working days.'),
+            ('👨‍💼','Dedicated Expert Assigned','A single point of contact manages your entire compliance journey.'),
+            ('🔒','Data Privacy Guaranteed','Your personal and business documents are handled with strict confidentiality.'),
+            ('💰','Transparent Pricing','No hidden charges — flat fees quoted upfront before you begin.'),
+            ('🏆','5000+ Clients Served','From solo founders to established enterprises across India.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:16px 20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.6rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.82rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">By the Numbers</h3>
+        {% for r in [
+          ('5000+','Businesses registered & compliant'),
+          ('98%','Client satisfaction rate'),
+          ('7 Days','Average company registration turnaround'),
+          ('50+','Legal & compliance experts on team'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Book Free Consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Not Sure Where to Start?</h2>
+      <p>Book a free 30-minute consultation call — our experts will guide you through the right structure and compliance path for your business.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Book Free Consultation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

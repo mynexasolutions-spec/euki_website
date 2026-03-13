@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}GST Registration & Filing Services in India — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/business-consultation">Business Consultation</a><span class="breadcrumb-sep">›</span><span>GST Services</span></div>
+    <h1>📄 GST Services</h1>
+    <p>From new GST registration to monthly return filing and annual audits — EUKI India keeps your business fully GST-compliant so you never face a notice or penalty.</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">End-to-End <span>GST Compliance</span> Services</h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('📝','GST Registration','New GSTIN registration for businesses crossing the turnover threshold, e-commerce sellers, and voluntary registrants — approved in 3–5 working days.'),
+        ('📊','GSTR-1 Filing','Monthly/quarterly outward supply return filing with accurate HSN-wise summary and invoice-level data matching.'),
+        ('📊','GSTR-3B Filing','Monthly summary return with ITC reconciliation, tax payment computation, and timely submission to avoid late fees.'),
+        ('📋','GSTR-9 Annual Return','Comprehensive annual return filing consolidating the entire year\'s data — mandatory for registered taxpayers above the threshold.'),
+        ('🔍','GST Audit (GSTR-9C)','Reconciliation statement and certification by a CA for taxpayers with turnover above ₹2 crore — we handle it end to end.'),
+        ('✏️','GST Amendment','Update your registered address, business name, authorised signatory, bank account, or add/remove business verticals.'),
+        ('❌','GST Cancellation','Voluntary or suo-motu GST cancellation with final return (GSTR-10) filing and clearance of pending liabilities.'),
+        ('🔄','GST Revocation','Reinstatement of a cancelled GSTIN by filing a revocation application along with pending returns and dues.'),
+        ('🧾','E-Invoice & E-Way Bill','Setup and ongoing management of e-invoicing (for eligible turnover) and e-way bill generation for goods movement.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHO NEEDS GST + RESULTS -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">GST Registration Threshold</div>
+        <h2 class="section-title" style="text-align:left;">Who <span>Must Register</span> for GST?</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('🏭','Goods Businesses — ₹40 Lakh Turnover','Mandatory registration once annual turnover exceeds ₹40 lakh (₹20 lakh for special category states).'),
+            ('💼','Service Businesses — ₹20 Lakh Turnover','Service providers must register once annual turnover crosses ₹20 lakh (₹10 lakh for special category states).'),
+            ('🛒','E-Commerce Sellers — Mandatory','All sellers on Amazon, Flipkart, Meesho, and other marketplaces must have GST regardless of turnover.'),
+            ('🌍','Inter-State Suppliers — Mandatory','Any business making inter-state supplies of goods or services must register, irrespective of turnover.'),
+            ('📦','Casual Taxable Person','Businesses operating without a fixed place of business must register before commencing operations.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:16px 20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.6rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.82rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Our GST Practice by Numbers</h3>
+        {% for r in [
+          ('10,000+','GST returns filed every year'),
+          ('₹0','Penalties incurred by our clients'),
+          ('3 Days','Average new registration turnaround'),
+          ('99%','On-time filing rate across all clients'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Talk to GST Expert →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS REQUIRED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Documents Checklist</div>
+      <h2 class="section-title">Documents Required for <span>GST Registration</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for doc in [
+        ('🪪','PAN Card of Business / Proprietor','PAN of the entity (company/LLP/firm) or the individual for proprietorship.'),
+        ('🪪','Aadhaar Card','Aadhaar of the authorised signatory for OTP-based e-KYC verification.'),
+        ('🏢','Proof of Business Address','Rent agreement + NOC or ownership document + utility bill for the principal place of business.'),
+        ('🏦','Bank Account Proof','Cancelled cheque or bank statement with IFSC and account number.'),
+        ('📜','Certificate of Incorporation','For companies and LLPs — the MCA-issued certificate of incorporation.'),
+        ('🖼️','Authorised Signatory Photo','Passport-size photograph of the authorised signatory on white background.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ doc[0] }}</div>
+        <h3>{{ doc[1] }}</h3>
+        <p>{{ doc[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid" style="align-items:start;">
+      <div>
+        <div class="section-label">Common GST Questions</div>
+        <h2 class="section-title" style="text-align:left;">Frequently Asked <span>GST Questions</span></h2>
+        <p style="color:var(--gray-600);margin-top:16px;line-height:1.85;">Have more questions? Our GST consultants are one call away — we explain everything in plain language without jargon.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-blue" style="margin-top:20px;">Ask a GST Expert</a>
+      </div>
+      <div>
+        {% for faq in [
+          ('Is GST mandatory for Amazon/Flipkart sellers?','Yes. All e-commerce marketplace sellers must have a valid GSTIN regardless of their annual turnover. Without it, your selling account will be suspended.'),
+          ('What is the penalty for late GST filing?','Late fee of ₹50 per day (₹20 per day for nil returns) subject to a maximum cap, plus 18% interest per annum on the outstanding tax amount.'),
+          ('Can I get GST for a home business?','Yes. You can register your home address as the principal place of business — simply provide consent from the property owner (NOC) and a utility bill.'),
+          ('How long does GST registration take?','Typically 3–7 working days if all documents are in order and the GST officer does not raise any query (known as ARN query).'),
+          ('What is the composition scheme?','A simplified tax scheme for small businesses with turnover below ₹1.5 crore — pay a flat rate of tax and file just one annual return (GSTR-4).'),
+        ] %}
+        <div class="accordion-item">
+          <button class="accordion-btn">{{ faq[0] }} <span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><p>{{ faq[1] }}</p></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Get Your GST Sorted Today</h2>
+      <p>Whether you need a new GSTIN or want to outsource your monthly filings completely — our team handles it all for a flat monthly fee.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get GST Help Now</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

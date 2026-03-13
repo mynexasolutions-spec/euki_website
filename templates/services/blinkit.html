@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Quick Commerce – Blinkit Management Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Quick Commerce – Blinkit</span></div>
+    <h1>⚡ Quick Commerce – Blinkit</h1>
+    <p>Win the 10-minute delivery race — end-to-end Blinkit account management, dark-store strategy, and performance advertising to put your brand in every local basket.</p>
+  </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What's Included</div>
+      <h2 class="section-title">Full-Stack <span>Blinkit Management</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Account Setup & Onboarding','Complete Blinkit seller registration, GSTIN linking, brand verification, and category approvals handled from day one.'),
+        ('📦','Catalogue & Listing Management','SEO-optimised product titles, accurate MRP/MOP tagging, correct HSN codes, and high-resolution images that meet Blinkit\'s catalogue guidelines.'),
+        ('🏪','Dark-Store Strategy','Inventory placement mapped to the highest-demand dark stores in your target cities to maximise availability and order fill-rate.'),
+        ('🔄','Inventory & Replenishment Planning','Real-time stock monitoring, demand forecasting, and timely replenishment schedules to eliminate out-of-stock events during peak hours.'),
+        ('📢','Blinkit Ads & Promotions','Sponsored listing campaigns, banner creatives, and discount-event participation (Blink Deals, festive sales) managed to hit target ROAS.'),
+        ('📊','Performance Analytics','Weekly dashboards covering GMV, units sold, fill-rate, search rank, and ad efficiency — with actionable improvement plans.'),
+        ('⭐','Ratings & Reviews Management','Proactive review solicitation and response strategy to maintain high product ratings and boost search visibility.'),
+        ('🔍','Search Rank Optimisation','Keyword research, title optimisation, and backend attribute tagging to improve organic product discovery on Blinkit.'),
+        ('🤝','Blinkit Account Health','Compliance monitoring, infringement handling, and escalation management to keep your seller account in good standing at all times.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHY BLINKIT + RESULTS -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">Why Quick Commerce?</div>
+        <h2 class="section-title" style="text-align:left;">The <span>Fastest-Growing</span> Retail Channel in India</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('⚡','10-Minute Delivery','Shoppers order and receive in under 10 minutes — impulse buying is at an all-time high.'),
+            ('🏙️','60+ Cities & 400+ Dark Stores','Blinkit\'s dark-store network spans tier-1 and fast-growing tier-2 cities across India.'),
+            ('📈','3x YoY GMV Growth','Quick commerce is outpacing traditional e-commerce, making early entry a massive competitive advantage.'),
+            ('🛒','FMCG, Grocery & Beyond','Categories expanding from staples to electronics, beauty, and pet care — huge white-space for new brands.'),
+            ('🎯','High Purchase Intent','Customers on quick commerce apps convert faster with minimal comparison shopping.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:16px 20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.8rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.82rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Average Results After 90 Days</h3>
+        {% for r in [
+          ('280%','Growth in monthly GMV on Blinkit'),
+          ('95%+','Order fill-rate achieved'),
+          ('3.5x','Return on Blinkit ad spend'),
+          ('60%','Improvement in search rank'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Get These Results →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES WE HANDLE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Categories</div>
+      <h2 class="section-title">We Manage Products Across <span>All Blinkit Categories</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for cat in [
+        ('🥗','Grocery & Staples','Atta, rice, pulses, oils, and daily essentials with high repeat purchase rates.'),
+        ('🧴','Personal Care & Beauty','Skincare, haircare, hygiene, and grooming products in one of Blinkit\'s fastest-growing segments.'),
+        ('🏠','Home & Household','Cleaning supplies, kitchen tools, and household consumables with strong basket attachment.'),
+        ('🥤','Beverages & Snacks','Packaged drinks, chips, health bars, and impulse snacks with strong evening demand.'),
+        ('💊','Health & Wellness','OTC medicines, supplements, vitamins, and health devices with consistent high demand.'),
+        ('🐾','Baby & Pet Care','Baby food, diapers, pet treats, and accessories — a premium category with loyal repeat buyers.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ cat[0] }}</div>
+        <h3>{{ cat[1] }}</h3>
+        <p>{{ cat[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to Win on Blinkit?</h2>
+      <p>Our quick commerce specialists will audit your current product presence (or get you started from scratch) and deliver a growth plan built for 10-minute retail.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get a Free Blinkit Audit</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

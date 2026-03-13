@@ -65,6 +65,11 @@
             <a href="{{ url_for('graphic_designing') }}">Graphic Design & Videos</a>
             <a href="{{ url_for('product_photography') }}">Product Photography</a>
           </div>
+          <div class="mega-col">
+            <h6>Quick Commerce</h6>
+            <a href="{{ url_for('blinkit') }}">⚡ Blinkit Management</a>
+            <a href="{{ url_for('zepto') }}">🟢 Zepto Management</a>
+          </div>
         </div>
       </li>
 
@@ -80,6 +85,18 @@
           <div class="dropdown-item"><a href="{{ url_for('jiomart') }}">🛍 JioMart</a></div>
           <div class="dropdown-item"><a href="{{ url_for('etsy') }}">🎨 Etsy</a></div>
           <div class="dropdown-item"><a href="{{ url_for('walmart') }}">🏪 Walmart</a></div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('consultation') }}" class="nav-link" data-toggle="consultation">
+          Business Consultation <span class="chevron">▾</span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-item"><a href="{{ url_for('company_registration') }}">🏢 Company Registration</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('gst_service') }}">📄 GST Services</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('legal_service') }}">⚖️ Legal Services</a></div>
+          <div class="dropdown-item"><a href="{{ url_for('trademark_registration') }}">™️ Trademark Registration</a></div>
         </div>
       </li>
 

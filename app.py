@@ -38,6 +38,35 @@ def product_photography():
 def seo():
     return render_template('services/seo.html')
 
+@app.route('/services/blinkit')
+def blinkit():
+    return render_template('services/blinkit.html')
+
+@app.route('/services/zepto')
+def zepto():
+    return render_template('services/zepto.html')
+
+# ── Business Consultation ─────────────────────────────────────────────────────
+@app.route('/business-consultation')
+def consultation():
+    return render_template('consultation.html')
+
+@app.route('/business-consultation/company-registration')
+def company_registration():
+    return render_template('consultation/company_registration.html')
+
+@app.route('/business-consultation/gst-service')
+def gst_service():
+    return render_template('consultation/gst_service.html')
+
+@app.route('/business-consultation/legal-service')
+def legal_service():
+    return render_template('consultation/legal_service.html')
+
+@app.route('/business-consultation/trademark-registration')
+def trademark_registration():
+    return render_template('consultation/trademark_registration.html')
+
 # ── E-Commerce Platforms ──────────────────────────────────────────────────────
 @app.route('/ecommerce')
 def ecommerce():

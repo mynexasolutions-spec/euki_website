@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}Legal Services for Businesses in India — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/business-consultation">Business Consultation</a><span class="breadcrumb-sep">›</span><span>Legal Services</span></div>
+    <h1>⚖️ Legal Services for Businesses</h1>
+    <p>Expert legal support tailored for Indian startups, SMEs, and growing businesses — contract drafting, compliance advisory, dispute resolution, and more.</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Legal Practice Areas</div>
+      <h2 class="section-title">Comprehensive <span>Business Legal Services</span></h2>
+      <p class="section-subtitle">From day-one founder agreements to scale-up compliance — our experienced legal team is your in-house counsel at a fraction of the cost.</p>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('📝','Business Contract Drafting','Professionally drafted vendor agreements, client contracts, SLAs, service agreements, and MoUs that protect your interests and reduce disputes.'),
+        ('🤐','NDA & Confidentiality Agreements','Non-disclosure and confidentiality agreements for employees, freelancers, business partners, and investors — tailored to Indian law.'),
+        ('👥','Founder & Shareholder Agreements','Equity split clauses, vesting schedules, IP assignment, anti-dilution, and exit provisions — critical documents every startup must have.'),
+        ('👔','Employment & HR Agreements','Offer letters, employment contracts, ESOP documentation, non-compete clauses, and HR policies compliant with Indian labour laws.'),
+        ('📋','Startup Legal Compliance Package','Comprehensive legal setup for new startups — MOA/AOA review, statutory registers, first board resolutions, and secretarial compliance.'),
+        ('🏛️','MSME / Udyam Registration','Online registration under the MSME Development Act to access government subsidies, priority lending, and collateral-free loans.'),
+        ('⚖️','Legal Notice & Dispute Resolution','Drafting and sending legal notices for recovery of dues, breach of contract, defamation, or IP infringement — with full follow-up support.'),
+        ('🔍','Due Diligence for Investments','Legal due diligence report covering company structure, compliance status, contracts, litigations, and IP for investors and acquirers.'),
+        ('🌐','E-Commerce Legal Compliance','Terms & Conditions, Privacy Policy, Refund Policy, and Cookie Policy drafting for websites and marketplace sellers per Indian IT Act requirements.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHY LEGAL MATTERS + PANEL -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">Why Legal Protection Matters</div>
+        <h2 class="section-title" style="text-align:left;">Most Business Disputes Are <span>Preventable</span></h2>
+        <p style="color:var(--gray-600);line-height:1.85;margin-top:16px;">A well-drafted agreement is the best insurance a business can have. Over 70% of commercial disputes in India arise from poorly structured contracts or missing documentation. We make sure you are never in that position.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('🛡️','Protect Your IP & Equity','Proper agreements ensure your ideas, code, and equity stake are legally yours.'),
+            ('💰','Recover Dues Faster','A valid contract backed by legal notice resolves payment disputes 3x faster.'),
+            ('🤝','Build Partner Trust','Well-structured agreements signal professionalism and build lasting B2B relationships.'),
+            ('🏛️','Stay Court-Room Ready','All our contracts are drafted to be enforceable in Indian courts under the Indian Contract Act, 1872.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:14px 18px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.5rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.8rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Our Legal Practice in Numbers</h3>
+        {% for r in [
+          ('3,000+','Contracts drafted & reviewed'),
+          ('500+','Startups legally onboarded'),
+          ('48 hrs','Average contract turnaround'),
+          ('100%','Enforceable under Indian law'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Talk to a Lawyer →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICABLE LAWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Governing Laws</div>
+      <h2 class="section-title">Key Indian Laws We Work With</h2>
+    </div>
+    <div class="grid-3">
+      {% for law in [
+        ('📖','Indian Contract Act, 1872','The cornerstone of all business agreements in India — our contracts are fully compliant and court-enforceable under this act.'),
+        ('🏢','Companies Act, 2013','Governing law for all private limited companies, OPCs, and Section 8 companies — we ensure your statutory compliance is airtight.'),
+        ('🤝','LLP Act, 2008','Applicable to Limited Liability Partnership formation, LLP agreements, and annual compliance requirements.'),
+        ('💻','IT Act, 2000 & DPDP Act, 2023','For e-commerce businesses — website policies, data localisation, and compliance with India\'s Digital Personal Data Protection Act.'),
+        ('🏭','MSME Development Act, 2006','Udyam/MSME registration, priority sector lending benefits, and MSME arbitration for delayed payments.'),
+        ('👔','Labour Laws (ShramSuvidha)','Factories Act, Shops & Establishments Act, PF, ESIC, and contractual labour compliance for businesses with employees.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ law[0] }}</div>
+        <h3>{{ law[1] }}</h3>
+        <p>{{ law[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Protect Your Business Today</h2>
+      <p>Speak to our business lawyers — get a free 30-minute legal consultation and a transparent quote for any contract or compliance requirement.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Book Free Legal Consultation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

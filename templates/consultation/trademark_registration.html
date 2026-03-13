@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}Trademark Registration in India — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/business-consultation">Business Consultation</a><span class="breadcrumb-sep">›</span><span>Trademark Registration</span></div>
+    <h1>™️ Trademark Registration in India</h1>
+    <p>Your brand name and logo are your most valuable assets — protect them with a registered trademark under the Trade Marks Act, 1999. Fast, affordable, and 100% online.</p>
+  </div>
+</div>
+
+<!-- WHAT CAN BE TRADEMARKED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What Can Be Trademarked</div>
+      <h2 class="section-title">Protect Every Element of <span>Your Brand Identity</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('🔤','Brand Name / Word Mark','Register your business name, product name, or tagline as a word trademark — the most common and powerful form of protection.'),
+        ('🎨','Logo & Device Mark','Protect your unique logo, symbol, or graphic design element as a device mark that covers the visual identity of your brand.'),
+        ('🔤🎨','Composite Mark','A combination of both text and logo registered together — ideal for brands with a consistent wordmark + logo treatment.'),
+        ('🎵','Sound Mark','Distinctive sounds, jingles, or musical phrases associated with your brand can be registered as sound trademarks in India.'),
+        ('🌈','Colour Mark','A unique combination of colours that is exclusively associated with your brand can be registered as a colour trademark.'),
+        ('📦','Product Shape / Trade Dress','The distinctive shape of a product or its packaging can be protected as a 3D trademark under Indian trademark law.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS + RESULTS -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title" style="text-align:left;">Trademark Filing in <span>5 Simple Steps</span></h2>
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:24px;">
+          {% for step in [
+            ('01','Trademark Search','We conduct a comprehensive search on the IP India trademark database to check availability and assess risks before filing.'),
+            ('02','Class Selection','Identify the correct Nice Classification class(es) for your goods/services to ensure maximum legal coverage.'),
+            ('03','Application Filing','File the trademark application (TM-A) on the IP India portal with all required details, logo (if applicable), and government fees.'),
+            ('04','Examination & Official Response','The Trade Marks Registry may issue an examination report — our attorneys draft a detailed response to overcome any objections.'),
+            ('05','Registration Certificate','Once accepted and published in the Trademark Journal (4 months), your ® registration certificate is issued — valid for 10 years.'),
+          ] %}
+          <div style="display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="background:var(--grad-hero);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.1rem;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ step[0] }}</div>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:4px;">{{ step[1] }}</div>
+              <div style="font-size:.85rem;color:var(--gray-600);line-height:1.65;">{{ step[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:28px;">Start Trademark Filing →</a>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Why Register Your Trademark?</h3>
+        {% for r in [
+          ('®','Exclusive right to use your brand name/logo nationally'),
+          ('🚫','Sue infringers and counterfeiters in court'),
+          ('💰','License or franchise your brand for passive income'),
+          ('🛒','Required for Amazon Brand Registry & Flipkart Brand Store'),
+          ('📈','Increases business valuation and investor confidence'),
+          ('10 Yrs','Protection renewable indefinitely every 10 years'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;font-family:var(--font-head);font-size:1rem;font-weight:800;color:#FFD54F;white-space:nowrap;flex-shrink:0;">{{ r[0] }}</div>
+          <div style="font-size:.88rem;opacity:.9;padding-top:8px;line-height:1.5;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:12px;width:100%;justify-content:center;">Protect My Brand →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES WE OFFER -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Full Trademark Services</div>
+      <h2 class="section-title">Beyond Registration — <span>Complete Brand Protection</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for svc in [
+        ('🔍','Trademark Search & Clearance','Thorough availability search on IP India\'s public database plus common law search to eliminate conflict risks before filing.'),
+        ('📝','New Trademark Application','Filing TM-A on the IP India portal — single class or multi-class applications for both individual and business applicants.'),
+        ('📢','Opposition Response','If another party opposes your trademark application, we draft a counter-statement and represent you before the Registrar.'),
+        ('🔄','Trademark Renewal','Reminder and timely renewal filing every 10 years to maintain your trademark registration in full force.'),
+        ('📦','Trademark Assignment','Legally transfer ownership of a registered trademark as part of a business sale, acquisition, or restructuring.'),
+        ('🌍','International Trademark (Madrid)','File for trademark protection in 130+ countries through the WIPO Madrid Protocol — managed from India.'),
+        ('⚠️','Cease & Desist Notices','Draft and send legal cease and desist notices to infringers misusing your registered brand name or logo.'),
+        ('🏪','Amazon Brand Registry','We use your registered trademark to enroll your brand in Amazon Brand Registry — unlocking A+ content, storefronts, and brand ads.'),
+        ('📊','IP Portfolio Management','Ongoing monitoring, renewal tracking, and strategic advice for businesses with multiple trademarks and IP assets.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ svc[0] }}</div>
+        <h3>{{ svc[1] }}</h3>
+        <p>{{ svc[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS + FAQ -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid" style="align-items:start;">
+      <div>
+        <div class="section-label">Documents Required</div>
+        <h2 class="section-title" style="text-align:left;">What You <span>Need to File</span></h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for doc in [
+            ('🖼️','Brand Logo (if applicable)','High-resolution logo in JPG/PNG format with a clear white background — at least 300 DPI.'),
+            ('🪪','Applicant\'s PAN Card','PAN of the individual or business entity filing the trademark application.'),
+            ('📜','Udyam / MSME Certificate','Required if you want to avail the concessional government fee applicable for MSME-registered businesses.'),
+            ('📋','Signed Form-48 (Power of Attorney)','Authorisation form signed by the applicant allowing our attorneys to file and act on your behalf.'),
+            ('📝','Priority Document (if any)','If claiming priority from a foreign trademark application, a certified copy of the foreign application is required.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:14px 18px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.5rem;">{{ doc[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--text-dark);">{{ doc[1] }}</div>
+              <div style="font-size:.8rem;color:var(--gray-600);">{{ doc[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Trademark FAQs</div>
+        <h2 class="section-title" style="text-align:left;">Frequently Asked <span>Questions</span></h2>
+        <div style="margin-top:24px;">
+          {% for faq in [
+            ('How long does trademark registration take in India?','After filing, the Registry typically takes 18–24 months to issue a full registration certificate. However, you get ™ rights immediately on filing and can take legal action against infringers from that date.'),
+            ('What is the difference between ™ and ®?','™ indicates you have filed a trademark application (unregistered claim). ® can only be used after your trademark is officially registered by the IP India Trade Marks Registry.'),
+            ('Can I register a trademark without a company?','Yes. Any individual, sole proprietor, HUF, or business entity can file a trademark application in India. A company is not required.'),
+            ('What if someone opposes my trademark?','After your application is accepted and published in the Trademark Journal, third parties have 4 months to file an opposition. We handle the full opposition proceedings and counter-statement on your behalf.'),
+            ('Is trademark registration required for Amazon Brand Registry?','Yes. Amazon Brand Registry requires a live registered trademark (or pending application in select cases) in the relevant class to enroll your brand.'),
+          ] %}
+          <div class="accordion-item">
+            <button class="accordion-btn">{{ faq[0] }} <span class="accordion-icon">+</span></button>
+            <div class="accordion-body"><p>{{ faq[1] }}</p></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Secure Your Brand Name Today</h2>
+      <p>Every day without a trademark is a day your brand name can be stolen. Our attorneys will search, file, and protect your trademark — affordably and expertly.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Register My Trademark</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

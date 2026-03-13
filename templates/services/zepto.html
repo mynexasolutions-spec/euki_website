@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Quick Commerce – Zepto Management Services — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/services">Services</a><span class="breadcrumb-sep">›</span><span>Quick Commerce – Zepto</span></div>
+    <h1>🟢 Quick Commerce – Zepto</h1>
+    <p>Scale faster on India's most aggressive quick-commerce platform — hyperlocal product visibility, smart dark-store placement, and data-driven campaigns on Zepto.</p>
+  </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What's Included</div>
+      <h2 class="section-title">Complete <span>Zepto Account Management</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for item in [
+        ('📋','Account Setup & Onboarding','End-to-end Zepto seller registration, FSSAI/brand documentation, category whitelisting, and launch-ready account configuration.'),
+        ('📦','Catalogue & Listing Optimisation','Compelling product titles, accurate weight/size variants, correct pricing, and compliant imagery that meets Zepto\'s content standards.'),
+        ('🏪','Dark-Store & City Expansion','Strategic product placement across high-density dark stores in priority cities, with a phased roll-out plan as your brand scales.'),
+        ('🔄','Inventory Forecasting & Management','Demand-based replenishment strategies, auto-alerts for low-stock thresholds, and supplier coordination to achieve 98%+ availability.'),
+        ('📢','Zepto Ads & Brand Campaigns','In-app banner placements, sponsored search, and limited-time offer participation to capture eyeballs and convert at checkout.'),
+        ('📊','Analytics & Reporting','Biweekly performance reports on GMV, order frequency, conversion rate, and campaign ROAS with clear next-step recommendations.'),
+        ('⭐','Ratings & Review Strategy','Review generation playbooks and customer feedback monitoring to maintain competitive product ratings on the platform.'),
+        ('🔍','Search Visibility & Ranking','Keyword-aligned listing copy, backend attribute mapping, and tag optimisation to appear first in category and search results.'),
+        ('🤝','Account Compliance & Health','Ongoing policy adherence, dispute resolution, and escalation handling to ensure zero business disruptions.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ item[0] }}</div>
+        <h3>{{ item[1] }}</h3>
+        <p>{{ item[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHY ZEPTO + RESULTS -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">Why Zepto?</div>
+        <h2 class="section-title" style="text-align:left;">India's <span>Fastest-Scaling</span> Quick Commerce Platform</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for p in [
+            ('🟢','10-Minute Promise','Zepto\'s hyperlocal dark-store model delivers in under 10 minutes, making it the go-to app for on-demand shoppers.'),
+            ('🏙️','50+ Cities & Rapidly Expanding','From metro tier-1 to high-growth tier-2 cities — Zepto is aggressively expanding its dark-store footprint.'),
+            ('👥','Young, High-Intent Audience','Zepto\'s user base skews 18–35 urban consumers with high disposable income and strong brand loyalty.'),
+            ('📈','Fastest User Growth in Q-Commerce','Zepto grew its user base by 3x in 24 months, offering early brands a major first-mover advantage.'),
+            ('🎯','Strong Repeat Purchase Rate','Grocery and FMCG on Zepto drive powerful week-on-week repeat orders — a goldmine for subscription-ready brands.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:16px 20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.8rem;">{{ p[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);">{{ p[1] }}</div>
+              <div style="font-size:.82rem;color:var(--gray-600);">{{ p[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div style="background:var(--grad-hero);border-radius:var(--radius-xl);padding:40px;color:var(--white);">
+        <h3 style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;margin-bottom:24px;">Average Results After 90 Days</h3>
+        {% for r in [
+          ('250%','GMV growth within first quarter'),
+          ('98%+','Product availability rate maintained'),
+          ('4.1x','Return on Zepto ad spend'),
+          ('55%','Lift in organic search rank'),
+        ] %}
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:#FFD54F;white-space:nowrap;">{{ r[0] }}</div>
+          <div style="font-size:.9rem;opacity:.85;padding-top:10px;">{{ r[1] }}</div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">Get These Results →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES WE HANDLE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Categories</div>
+      <h2 class="section-title">We Manage Products Across <span>All Zepto Categories</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for cat in [
+        ('🥛','Dairy & Breakfast','Milk, eggs, bread, cereals, and morning essentials with daily recurring orders.'),
+        ('🥤','Beverages & Snacks','Soft drinks, juices, health drinks, chips, biscuits, and on-the-go snacking items.'),
+        ('🧴','Beauty & Personal Care','Skincare, haircare, bath & body, and grooming — one of Zepto\'s highest-growth segments.'),
+        ('💊','Pharmacy & Wellness','Over-the-counter medicines, vitamins, protein supplements, and health devices on-demand.'),
+        ('🏠','Kitchen & Cleaning','Dishwash, floor cleaners, utensils, and kitchen consumables with strong basket add-on rates.'),
+        ('⚡','Electronics & Accessories','Chargers, earphones, phone accessories, and small gadgets — Zepto\'s fastest-expanding non-grocery vertical.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ cat[0] }}</div>
+        <h3>{{ cat[1] }}</h3>
+        <p>{{ cat[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to Scale on Zepto?</h2>
+      <p>Our quick commerce team will assess your brand's readiness, map the right dark stores, and launch a growth strategy tailored for the 10-minute economy.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get a Free Zepto Growth Plan</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

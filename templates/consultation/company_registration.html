@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Company Registration Services in India — EUKI India{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/business-consultation">Business Consultation</a><span class="breadcrumb-sep">›</span><span>Company Registration</span></div>
+    <h1>🏢 Company Registration in India</h1>
+    <p>Register your business the right way — Private Limited, OPC, LLP, or Partnership. 100% online process managed end-to-end by our MCA-certified experts.</p>
+  </div>
+</div>
+
+<!-- TYPES OF REGISTRATION -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Business Structures</div>
+      <h2 class="section-title">Choose the Right <span>Business Entity</span> for You</h2>
+      <p class="section-subtitle">Every business is different. We help you pick the structure that matches your goals, funding plans, and liability preferences.</p>
+    </div>
+    <div class="grid-2" style="gap:28px;">
+      {% for ent in [
+        ('🏛️','Private Limited Company (Pvt. Ltd.)','The most preferred structure for startups and growing businesses. Offers limited liability, easy fundraising, and high credibility with customers and investors.','Best for: Startups, funded ventures, and scaling businesses'),
+        ('👤','One Person Company (OPC)','A company owned and managed by a single individual with limited liability. Ideal for solo entrepreneurs who want the benefits of a company without partners.','Best for: Solo founders and freelancers scaling up'),
+        ('🤝','Limited Liability Partnership (LLP)','Combines the flexibility of a partnership with limited liability protection. No minimum capital requirement and less compliance overhead than a Pvt. Ltd.','Best for: Professional firms, consultancies, and service businesses'),
+        ('📝','Partnership Firm','Simple to set up and operate with two or more partners. Governed by the Indian Partnership Act, 1932 — best for small traditional businesses.','Best for: Small family businesses and retail traders'),
+        ('🏪','Sole Proprietorship','The simplest form — a single owner registered as a business under MSME/Udyam or trade licence. Minimal compliance and full control.','Best for: Local shops, individual traders, and home businesses'),
+        ('🏗️','Section 8 Company (NGO)','A non-profit company incorporated under Section 8 of the Companies Act for charitable, educational, or social objectives.','Best for: NGOs, trusts, and social enterprises'),
+      ] %}
+      <div class="card service-card" style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:2rem;">{{ ent[0] }}</span>
+          <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:800;color:var(--text-dark);margin:0;">{{ ent[1] }}</h3>
+        </div>
+        <p style="color:var(--gray-600);font-size:.88rem;line-height:1.75;flex-grow:1;">{{ ent[2] }}</p>
+        <div style="background:var(--off-white);border-radius:var(--radius-sm);padding:8px 14px;font-size:.8rem;font-weight:600;color:var(--blue-mid);">{{ ent[3] }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED + PROCESS -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <div class="section-label">What We Handle</div>
+        <h2 class="section-title" style="text-align:left;">Complete <span>End-to-End</span> Registration Support</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+          {% for s in [
+            ('📋','DIN & DSC Application','Director Identification Number and Digital Signature Certificate procurement for all directors.'),
+            ('🔤','Name Approval (RUN/SPICe+)','Reserve Unique Name (RUN) filing or name reservation via the SPICe+ integrated form on MCA portal.'),
+            ('📄','MOA & AOA Drafting','Memorandum and Articles of Association professionally drafted to match your business objectives.'),
+            ('🏛️','MCA Incorporation Filing','Complete SPICe+ form filing covering PAN, TAN, GSTIN, ESI, and PF registration in a single application.'),
+            ('📜','Certificate of Incorporation','Official CoI issued by the Registrar of Companies (RoC) with your CIN number.'),
+            ('🏦','Bank Account Opening Support','Assistance with opening a current account in the company name with leading Indian banks.'),
+            ('📊','Post-Incorporation Compliance','Statutory register setup, share certificate issuance, and first board meeting minutes.'),
+          ] %}
+          <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);padding:14px 18px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <span style="font-size:1.5rem;">{{ s[0] }}</span>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--text-dark);">{{ s[1] }}</div>
+              <div style="font-size:.8rem;color:var(--gray-600);">{{ s[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title" style="text-align:left;">Registered in <span>4 Simple Steps</span></h2>
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:24px;">
+          {% for step in [
+            ('01','Share Your Details','Fill our short form with your name, proposed business type, and director information.'),
+            ('02','Document Collection','Upload KYC documents (Aadhaar, PAN, photo, address proof) via our secure portal.'),
+            ('03','Filing & Processing','Our team files the MCA application and follows up with the government registry on your behalf.'),
+            ('04','Receive Your COI','Get your Certificate of Incorporation delivered digitally — usually within 7–10 working days.'),
+          ] %}
+          <div style="display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="background:var(--grad-hero);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.1rem;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ step[0] }}</div>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-dark);margin-bottom:4px;">{{ step[1] }}</div>
+              <div style="font-size:.85rem;color:var(--gray-600);line-height:1.65;">{{ step[2] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary" style="margin-top:28px;">Start My Registration →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS REQUIRED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Documents Checklist</div>
+      <h2 class="section-title">Documents Required for <span>Company Registration</span></h2>
+    </div>
+    <div class="grid-3">
+      {% for doc in [
+        ('🪪','PAN Card','PAN card of all proposed directors/partners — mandatory for all Indian nationals.'),
+        ('🪪','Aadhaar Card','Aadhaar card of all directors for address and identity verification.'),
+        ('🖼️','Passport-size Photo','Recent colour photograph of each director on a white background.'),
+        ('🏠','Address Proof (Director)','Bank statement, utility bill, or rent agreement (not older than 2 months) for each director.'),
+        ('🏢','Registered Office Proof','Electricity bill / NOC from property owner + rent agreement for the company\'s registered address.'),
+        ('✍️','Director\'s Consent','Form DIR-2 consent and declaration signed by each director.'),
+      ] %}
+      <div class="card service-card">
+        <div class="icon-wrap">{{ doc[0] }}</div>
+        <h3>{{ doc[1] }}</h3>
+        <p>{{ doc[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to Register Your Company?</h2>
+      <p>Talk to our company law experts today — get a free eligibility check and a flat-fee quote with no hidden charges.</p>
+      <a href="{{ url_for('business_enquiry') }}" class="btn btn-primary btn-lg">Get Free Consultation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
