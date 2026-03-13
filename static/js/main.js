@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         msg ? `💬 *Message:* ${msg}` : '',
       ].filter(Boolean).join('\n');
 
-      const waNumber = '916299431321';
+      const waNumber = '919508088497';
       const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
       window.open(waURL, '_blank', 'noopener,noreferrer');
     });
