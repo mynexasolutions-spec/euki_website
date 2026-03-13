@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 
 app = Flask(__name__)
-app.secret_key = 'euki-india-secret-key-2024'
+app.secret_key = 'CEUKI-india-secret-key-2024'
 
 # ── Home ──────────────────────────────────────────────────────────────────────
 @app.route('/')

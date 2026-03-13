@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════
-//  EUKI INDIA PVT. LTD. — MAIN JS
+//  CEUKI INDIA PVT. LTD. — MAIN JS
 // ═══════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -144,6 +144,43 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.5 });
 
   document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+  // ── Student Enquiry → WhatsApp ─────────────────────────
+  const studentForm = document.getElementById('studentEnquiryForm');
+  if (studentForm) {
+    studentForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name   = document.getElementById('s_name').value.trim();
+      const phone  = document.getElementById('s_phone').value.trim();
+      const email  = document.getElementById('s_email').value.trim();
+      const city   = document.getElementById('s_city').value.trim();
+      const status = document.getElementById('s_status').value.trim();
+      const course = document.getElementById('s_course').value.trim();
+      const msg    = document.getElementById('s_msg').value.trim();
+
+      if (!name || !phone || !email || !city || !status || !course) {
+        alert('Please fill in all required fields before submitting.');
+        return;
+      }
+
+      const text = [
+        '🎓 *New Student Enquiry — CEUKI Learning Program*',
+        '',
+        `👤 *Name:* ${name}`,
+        `📱 *Phone:* ${phone}`,
+        `📧 *Email:* ${email}`,
+        `🏙️ *City:* ${city}`,
+        `👔 *Status:* ${status}`,
+        `📚 *Interested Course:* ${course}`,
+        msg ? `💬 *Message:* ${msg}` : '',
+      ].filter(Boolean).join('\n');
+
+      const waNumber = '916299431321';
+      const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+      window.open(waURL, '_blank', 'noopener,noreferrer');
+    });
+  }
 
   // ── Flash message auto-hide ────────────────────────────
   const alerts = document.querySelectorAll('.alert');

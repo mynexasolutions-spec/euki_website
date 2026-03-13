@@ -1,21 +1,21 @@
-# EUKI India Pvt. Ltd. — Website
+# CEUKI India Pvt. Ltd. — Website
 
-A complete Flask-based website for EUKI India Pvt. Ltd., mirroring the structure and content strategy of evitamin.in, with EUKI's brand theme (blue-to-orange gradient).
+A complete Flask-based website for CEUKI India Pvt. Ltd., mirroring the structure and content strategy of evitamin.in, with CEUKI's brand theme (blue-to-orange gradient).
 
 ## 📁 Project Structure
 
 ```
-euki_website/
+CEUKI_website/
 ├── app.py                    # Flask application & routes
 ├── requirements.txt          # Python dependencies
 ├── README.md
 ├── static/
 │   ├── css/
-│   │   └── main.css          # Main stylesheet (EUKI brand theme)
+│   │   └── main.css          # Main stylesheet (CEUKI brand theme)
 │   ├── js/
 │   │   └── main.js           # Interactive JS (navbar, accordion, tabs, counters)
 │   └── images/
-│       └── logo.png          # EUKI India logo
+│       └── logo.png          # CEUKI India logo
 └── templates/
     ├── base.html             # Base layout (navbar + footer)
     ├── home.html             # Homepage
@@ -60,7 +60,7 @@ Make sure Python is installed: `python --version`
 
 ### 2. Create a Virtual Environment
 ```bash
-cd euki_website
+cd CEUKI_website
 python -m venv venv
 
 # Activate:
@@ -86,10 +86,10 @@ Visit: **http://localhost:5000**
 
 ## 🎨 Branding & Theme
 
-The site uses EUKI India's brand colors extracted from the logo:
+The site uses CEUKI India's brand colors extracted from the logo:
 - **Primary Blue:** `#0D47A1` → `#1976D2`
 - **Brand Orange:** `#E65100` → `#FF8F00`
-- **Gradient:** Blue-to-Orange (matching the EUKI logo arrow)
+- **Gradient:** Blue-to-Orange (matching the CEUKI logo arrow)
 
 Fonts: **Poppins** (headings) + **Nunito** (body) — loaded from Google Fonts.
 
@@ -151,4 +151,4 @@ Use Nginx as a reverse proxy for static files.
 
 ---
 
-Built with ❤️ for EUKI India Pvt. Ltd.
+Built with ❤️ for CEUKI India Pvt. Ltd.
